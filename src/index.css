@@ -350,12 +350,12 @@ main>section {
 
 .daylight-description {
   font-size: 1.15rem;
-  color: #ffffff;
+  color: #000000;
   font-weight: 600;
   line-height: 1.65;
   max-width: 560px;
   margin-bottom: 28px;
-  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.7);
+  text-shadow: none;
 }
 
 .daylight-cta-row {
@@ -852,13 +852,13 @@ main>section {
 
   .daylight-description {
     font-size: 1.02rem;
-    color: #ffffff;
+    color: #000000;
     font-weight: 600;
     line-height: 1.55;
     margin: 0 auto 22px auto;
     max-width: 480px;
     text-align: center;
-    text-shadow: 0 3px 16px rgba(0, 0, 0, 0.75);
+    text-shadow: none;
   }
 
   .daylight-cta-row {
