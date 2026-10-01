@@ -59,15 +59,20 @@ export default function Hero() {
         <div className="daylight-hero-grid">
           {/* Left Column: Heading, Copy, Buttons, 4 Feature Cards */}
           <div className="daylight-hero-left">
-            {/* Eyebrow */}
-            <div className="daylight-eyebrow">
-              CLEAN ENERGY &bull; SMART NETWORK &bull; GREENER TOMORROW
+            {/* Eyebrow Badge */}
+            <div className="daylight-eyebrow-badge">
+              <span className="live-pulsing-dot"></span>
+              <span>CLEAN ENERGY</span>
+              <span className="eyebrow-bullet">•</span>
+              <span className="eyebrow-accent-green">SMART NETWORK</span>
+              <span className="eyebrow-bullet">•</span>
+              <span>GREENER TOMORROW</span>
             </div>
 
             {/* Headline */}
             <h1 className="daylight-title">
-              EVOLTEK:<br />
-              <span className="title-line-2">Powering Every Journey.</span>
+              <span className="title-line-1">HIGHWAY CHARGING.</span><br />
+              <span className="title-line-2 title-gradient-green">HIGHWAY EXPERIENCE.</span>
             </h1>
 
             {/* Subtitle / Paragraph */}

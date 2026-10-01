@@ -75,7 +75,7 @@ main>section {
   pointer-events: auto;
   max-width: 1260px;
   margin: 0 auto;
-  height: 64px;
+  height: 80px;
   padding: 0 10px 0 18px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
@@ -99,7 +99,7 @@ main>section {
 }
 
 .daylight-logo-img {
-  height: 48px;
+  height: 70px;
   width: auto;
   max-width: 155px;
   object-fit: contain;
@@ -203,15 +203,13 @@ main>section {
    ========================================= */
 .daylight-hero-section {
   position: relative;
-  min-height: clamp(720px, 88vh, 860px);
+  min-height: clamp(760px, 92vh, 920px);
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: transparent;
-  background-image:
-    linear-gradient(112deg, rgba(7, 59, 42, 0.24) 0%, rgba(10, 157, 77, 0.08) 48%, rgba(255, 255, 255, 0) 82%),
-    url('/image.png');
+  background-image: url('/image.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -252,6 +250,7 @@ main>section {
   grid-template-columns: 1.1fr 0.9fr;
   gap: 30px;
   align-items: center;
+  margin-top: clamp(64px, 10vh, 120px);
   margin-bottom: 12px;
 }
 
@@ -259,11 +258,20 @@ main>section {
   max-width: 760px;
   width: 100%;
   margin: 0;
+  padding-top: clamp(14px, 2.5vh, 28px);
   text-align: left;
 }
 
-.daylight-eyebrow {
-  display: inline-block;
+.daylight-eyebrow,
+.daylight-eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
   color: #ffffff;
   font-size: 0.82rem;
   font-weight: 750;
@@ -272,15 +280,60 @@ main>section {
   margin-bottom: 14px;
 }
 
+.live-pulsing-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #34d399;
+  display: inline-block;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.3);
+  }
+}
+
+.eyebrow-bullet {
+  color: #34d399;
+  font-size: 0.85rem;
+}
+
+.eyebrow-accent-green {
+  color: #34d399;
+  font-weight: 850;
+  text-shadow: 0 0 12px rgba(52, 211, 153, 0.5);
+}
+
 .daylight-title {
   font-size: clamp(2.6rem, 4.3vw, 4.15rem);
   font-weight: 900;
-  line-height: 1.04;
+  line-height: 1.05;
   letter-spacing: -0.025em;
   color: #ffffff;
-  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.28);
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.35);
   margin-bottom: 18px;
   font-family: var(--font-sans);
+}
+
+.title-line-1 {
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.title-gradient-green {
+  color: #34d399;
+  text-shadow: 0 2px 18px rgba(52, 211, 153, 0.5);
+  font-weight: 950;
 }
 
 @media (min-width: 681px) {
@@ -292,10 +345,11 @@ main>section {
 
 .daylight-description {
   font-size: 1.05rem;
-  color: #f1f5f9;
-  line-height: 1.6;
-  max-width: 520px;
+  color: #ffffff;
+  line-height: 1.65;
+  max-width: 540px;
   margin-bottom: 26px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .daylight-cta-row {
@@ -390,14 +444,17 @@ main>section {
 }
 
 .daylight-mini-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.95);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.52) 100%);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
   border-radius: 20px;
   padding: 16px 20px 14px 20px;
-  box-shadow: 0 8px 26px -4px rgba(0, 0, 0, 0.06);
-  transition: all 0.25s ease;
+  box-shadow:
+    0 16px 36px -6px rgba(0, 0, 0, 0.07),
+    0 4px 16px rgba(16, 185, 129, 0.06),
+    inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -405,9 +462,12 @@ main>section {
 }
 
 .daylight-mini-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 32px -6px rgba(0, 0, 0, 0.12);
-  border-color: rgba(22, 163, 74, 0.3);
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.65) 100%);
+  border-color: rgba(52, 211, 153, 0.8);
+  box-shadow:
+    0 20px 40px -6px rgba(16, 185, 129, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 .mini-card-header {
@@ -428,7 +488,10 @@ main>section {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #ecfdf5;
+  background: rgba(236, 253, 245, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(16, 185, 129, 0.2);
   color: #16a34a;
   display: flex;
   align-items: center;
@@ -697,10 +760,13 @@ main>section {
     padding: 0 16px;
   }
 
-  .daylight-eyebrow {
-    font-size: 0.74rem;
+  .daylight-eyebrow,
+  .daylight-eyebrow-badge {
+    font-size: 0.72rem;
     letter-spacing: 0.08em;
     margin-bottom: 10px;
+    padding: 5px 12px;
+    flex-wrap: wrap;
   }
 
   .daylight-title {
@@ -2492,19 +2558,19 @@ main>section {
 /* Hexagon Step Badge */
 .step-hexagon-badge {
   position: relative;
-  width: 96px;
-  height: 106px;
+  width: 76px;
+  height: 84px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
-  filter: drop-shadow(0 6px 16px rgba(15, 118, 74, 0.32));
+  margin-bottom: 12px;
+  filter: drop-shadow(0 5px 14px rgba(15, 118, 74, 0.28));
   transition: transform 0.25s ease;
   cursor: pointer;
 }
 
 .step-hexagon-badge:hover {
-  transform: translateY(-4px) scale(1.05);
+  transform: translateY(-3px) scale(1.05);
 }
 
 .hexagon-svg {
@@ -2517,7 +2583,7 @@ main>section {
 .hexagon-num {
   position: relative;
   z-index: 2;
-  font-size: 2.1rem;
+  font-size: 1.65rem;
   font-weight: 900;
   color: #ffffff;
   letter-spacing: -0.02em;
@@ -2530,13 +2596,13 @@ main>section {
   height: 100%;
   flex-grow: 1;
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
+  border-radius: 18px;
   border: 1.5px solid rgba(198, 214, 204, 0.7);
-  padding: 24px 20px 16px 20px;
-  box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.04);
+  padding: 16px 16px 12px 16px;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  min-height: 270px;
+  min-height: 220px;
   box-sizing: border-box;
   position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
@@ -2552,11 +2618,11 @@ main>section {
 .process-step-card::before {
   content: '';
   position: absolute;
-  top: -8px;
+  top: -7px;
   left: 50%;
   transform: translateX(-50%);
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   background: #ffffff;
   border-left: 1.5px solid rgba(198, 214, 204, 0.7);
   border-top: 1.5px solid rgba(198, 214, 204, 0.7);
@@ -2571,11 +2637,11 @@ main>section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 3px;
 }
 
 .card-step-title {
-  font-size: 1.15rem;
+  font-size: 0.98rem;
   font-weight: 850;
   letter-spacing: -0.01em;
   color: #0f172a;
@@ -2584,9 +2650,9 @@ main>section {
 }
 
 .card-top-icon-pill {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
   background: rgba(34, 197, 94, 0.12);
   display: flex;
   align-items: center;
@@ -2594,12 +2660,12 @@ main>section {
 }
 
 .card-step-desc {
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   color: #475569;
-  line-height: 1.45;
+  line-height: 1.35;
   font-weight: 500;
-  margin-bottom: 12px;
-  min-height: 42px;
+  margin-bottom: 4px;
+  min-height: auto;
 }
 
 /* 3D Illustration Container */
@@ -2608,31 +2674,31 @@ main>section {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 110px;
+  height: 85px;
   width: 100%;
 }
 
 .step-3d-svg {
   width: 100%;
-  max-height: 110px;
+  max-height: 90px;
   overflow: visible;
 }
 
 .step-card-img {
-  max-height: 95px;
-  max-width: 135px;
+  max-height: 80px;
+  max-width: 115px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.12));
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.1));
   transition: transform 0.25s ease;
 }
 
 .step-flaticon-svg {
-  max-height: 96px;
-  max-width: 125px;
+  max-height: 80px;
+  max-width: 105px;
   width: auto;
   height: auto;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.08));
   transition: transform 0.25s ease;
   overflow: visible;
 }
@@ -2879,10 +2945,10 @@ main>section {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(243, 253, 247, 0.92) 100%);
   border: 1.5px solid #d1fae5;
   border-radius: 18px;
-  padding: 22px 18px 18px 18px;
+  padding: 22px 18px 20px 18px;
   display: flex;
   flex-direction: column;
-  min-height: 185px;
+  min-height: 160px;
   box-shadow:
     0 8px 24px -4px rgba(6, 78, 59, 0.05),
     0 2px 6px rgba(0, 0, 0, 0.02);
@@ -2960,7 +3026,7 @@ main>section {
   font-size: 0.81rem;
   color: #475569;
   line-height: 1.45;
-  margin: 14px 0 10px 0;
+  margin: 14px 0 0 0;
   font-weight: 500;
 }
 
@@ -4192,7 +4258,7 @@ main>section {
   background: #ffffff;
   border: 1.5px solid rgba(187, 247, 208, 0.75);
   border-radius: 18px;
-  padding: 24px 14px 18px;
+  padding: 24px 14px 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4242,7 +4308,7 @@ main>section {
   font-weight: 500;
   color: #475569;
   line-height: 1.35;
-  margin: 0 0 14px 0;
+  margin: 0;
   flex-grow: 1;
 }
 
@@ -4339,7 +4405,7 @@ main>section {
    ========================================= */
 .ev-calc-section {
   padding: 80px 0 90px 0;
-  background: #f8fafc;
+  background: #ffffff;
   position: relative;
   font-family: var(--font-sans);
 }

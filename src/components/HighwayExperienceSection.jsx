@@ -170,11 +170,6 @@ export default function HighwayExperienceSection() {
                   </React.Fragment>
                 ))}
               </p>
-
-              {/* Bottom Subtle Arrow Indicator */}
-              <div className="hub-card-arrow" aria-hidden="true">
-                <span>→</span>
-              </div>
             </div>
           ))}
         </div>

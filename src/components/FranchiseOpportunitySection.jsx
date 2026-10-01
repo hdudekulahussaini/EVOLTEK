@@ -184,11 +184,6 @@ export default function FranchiseOpportunitySection() {
                   </React.Fragment>
                 ))}
               </p>
-
-              {/* Bottom Right Circular Arrow Action */}
-              <div className="daylight-card-arrow-btn" aria-label="Learn more">
-                <span className="arrow-glyph">→</span>
-              </div>
             </div>
           ))}
         </div>
