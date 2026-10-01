@@ -10,9 +10,11 @@ try {
   const publicDir = path.resolve(__dirname, 'public');
 
   const newLogoPath = 'C:/Users/HP/.gemini/antigravity-ide/brain/a18d06ec-0127-4cfa-bbea-bca8124b1054/.user_uploaded/media_1790826967932.png';
+  const newFooterLogoPath = 'C:/Users/HP/.gemini/antigravity-ide/brain/a18d06ec-0127-4cfa-bbea-bca8124b1054/.user_uploaded/media_1790849005757.png';
   const newFranchiseChargerPath = 'C:/Users/HP/.gemini/antigravity-ide/brain/a18d06ec-0127-4cfa-bbea-bca8124b1054/.user_uploaded/media_1790829427017.jpg';
 
   const filesToSync = [
+    { src: newFooterLogoPath, dest: 'evoltek-footer-logo.png' },
     { src: newLogoPath, dest: 'evoltek-logo.png' },
     { src: newLogoPath, dest: 'evoltek-logo.jpg' },
     { src: newFranchiseChargerPath, dest: 'franchise-opportunity-charger.jpg' },
@@ -63,6 +65,14 @@ export default defineConfig({
             if (fs.existsSync(uploadedCharger)) {
               res.setHeader('Content-Type', 'image/jpeg');
               fs.createReadStream(uploadedCharger).pipe(res);
+              return;
+            }
+          }
+          if (req.url === '/evoltek-footer-logo.png' || req.url?.startsWith('/evoltek-footer-logo.png')) {
+            const uploadedFooterLogo = 'C:/Users/HP/.gemini/antigravity-ide/brain/a18d06ec-0127-4cfa-bbea-bca8124b1054/.user_uploaded/media_1790849005757.png';
+            if (fs.existsSync(uploadedFooterLogo)) {
+              res.setHeader('Content-Type', 'image/png');
+              fs.createReadStream(uploadedFooterLogo).pipe(res);
               return;
             }
           }
