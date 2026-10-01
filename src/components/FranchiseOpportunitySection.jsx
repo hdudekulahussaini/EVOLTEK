@@ -2,32 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 export default function FranchiseOpportunitySection() {
   const [hoveredCard, setHoveredCard] = useState(null);
-  const [chargerSceneImg, setChargerSceneImg] = useState(null);
-
-  // Extract ONLY the top-right charger & car scene (excluding all text and cards)
-  useEffect(() => {
-    const img = new Image();
-    img.src = '/franchise-daylight.jpg';
-    img.onload = () => {
-      try {
-        const canvas = document.createElement('canvas');
-        const sx = img.naturalWidth * 0.58;
-        const sy = 0;
-        const sw = img.naturalWidth * 0.42;
-        const sh = img.naturalHeight * 0.48;
-
-        canvas.width = sw;
-        canvas.height = sh;
-        const ctx = canvas.getContext('2d');
-        if (ctx) {
-          ctx.drawImage(img, sx, sy, sw, sh, 0, 0, sw, sh);
-          setChargerSceneImg(canvas.toDataURL('image/jpeg', 0.96));
-        }
-      } catch (e) {
-        // Fallback
-      }
-    };
-  }, []);
 
   const cards = [
     {
@@ -159,24 +133,11 @@ export default function FranchiseOpportunitySection() {
           {/* Right Visual Column (Pristine Charger + EV Car Scene) */}
           <div className="franchise-hero-right" aria-hidden="true">
             <div className="charger-portal-wrapper">
-              {chargerSceneImg ? (
-                <img
-                  src={chargerSceneImg}
-                  alt="EVOLTEK DC Fast Charger and Electric Car"
-                  className="charger-portal-img"
-                />
-              ) : (
-                <div className="charger-portal-fallback">
-                  <div className="kiosk-body">
-                    <div className="kiosk-glow-strip" />
-                    <div className="kiosk-screen">
-                      <span className="kiosk-logo">⚡ EVOLTEK</span>
-                      <span className="kiosk-status">FAST DC • READY</span>
-                    </div>
-                    <div className="kiosk-cable" />
-                  </div>
-                </div>
-              )}
+              <img
+                src="/franchise-opportunity-charger.jpg"
+                alt="EVOLTEK DC Fast Charger 1000V and Electric Vehicle"
+                className="charger-portal-img"
+              />
             </div>
           </div>
         </div>

@@ -95,9 +95,9 @@ body {
 }
 
 .daylight-logo-img {
-  height: 44px;
+  height: 48px;
   width: auto;
-  max-width: 140px;
+  max-width: 155px;
   object-fit: contain;
   mix-blend-mode: multiply;
   transition: transform 0.25s ease;
@@ -613,6 +613,10 @@ body {
 
   .daylight-mobile-toggle {
     display: flex;
+  }
+
+  .btn-get-app {
+    display: none;
   }
 
   .daylight-nav-links.mobile-open {
@@ -2693,13 +2697,12 @@ body {
 .charger-portal-wrapper {
   position: relative;
   width: 100%;
-  max-width: 490px;
-  height: 270px;
-  border-radius: 36px 0 0 36px;
-  border: 2.5px solid #34d399;
-  border-right: none;
+  max-width: 520px;
+  height: 290px;
+  border-radius: 28px;
+  border: 2px solid #34d399;
   overflow: hidden;
-  box-shadow: -10px 15px 35px -5px rgba(5, 150, 105, 0.15);
+  box-shadow: 0 16px 40px -8px rgba(5, 150, 105, 0.22);
   background: #022013;
 }
 

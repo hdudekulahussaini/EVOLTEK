@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <header className="daylight-nav-wrapper">
       <div className="daylight-nav-container">
-        {/* Brand Logo with evoltek-logo.jpg */}
+        {/* Brand Logo with evoltek-logo.png */}
         <a
           href="#home"
           className="daylight-brand"
@@ -34,7 +34,7 @@ export default function Navbar() {
           title="EVOLTEK"
         >
           <img
-            src="/evoltek-logo.jpg"
+            src="/evoltek-logo.png"
             alt="EVOLTEK"
             className="daylight-logo-img"
           />

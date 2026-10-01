@@ -79,11 +79,11 @@ export default function Footer() {
         {/* Main 3-Column Grid */}
         <div className="footer-exact-grid">
           {/* Column 1: Glowing Brand Logo & Tagline */}
-          {/* Column 1: evoltek-logo.jpg & Tagline */}
+          {/* Column 1: evoltek-logo.png & Tagline */}
           <div className="footer-col-brand">
             <div className="footer-brand-logo-badge">
               <img
-                src="/evoltek-logo.jpg"
+                src="/evoltek-logo.png"
                 alt="EVOLTEK"
                 className="footer-logo-img"
               />

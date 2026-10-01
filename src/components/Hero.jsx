@@ -147,7 +147,7 @@ export default function Hero() {
                   </div>
                 </div>
                 <div className="mini-card-sub-pills">
-                  <span className="green-bullet">&bull; CITY</span> &bull; HIGHWAY &bull; DESTINATION
+                  &bull; CITY &bull; HIGHWAY &bull; DESTINATION
                 </div>
                 <div className="mini-card-graphic route-graphic">
                   {detailGraphics.highwayMap ? (

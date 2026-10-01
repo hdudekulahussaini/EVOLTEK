@@ -9,9 +9,15 @@ try {
   const brainDir = 'C:/Users/HP/.gemini/antigravity-ide/brain/f96c1a1c-e7f1-4a25-9f04-4a081dd79258';
   const publicDir = path.resolve(__dirname, 'public');
 
+  const newLogoPath = 'C:/Users/HP/.gemini/antigravity-ide/brain/a18d06ec-0127-4cfa-bbea-bca8124b1054/.user_uploaded/media_1790826967932.png';
+  const newFranchiseChargerPath = 'C:/Users/HP/.gemini/antigravity-ide/brain/a18d06ec-0127-4cfa-bbea-bca8124b1054/.user_uploaded/media_1790829427017.jpg';
+
   const filesToSync = [
+    { src: newLogoPath, dest: 'evoltek-logo.png' },
+    { src: newLogoPath, dest: 'evoltek-logo.jpg' },
+    { src: newFranchiseChargerPath, dest: 'franchise-opportunity-charger.jpg' },
+    { src: newFranchiseChargerPath, dest: 'franchise-daylight.jpg' },
     { src: `${brainDir}/ev_hero_bg_1790747123258.jpg`, dest: 'hero-bg.jpg' },
-    { src: `${brainDir}/.user_uploaded/media_1790747497625.jpg`, dest: 'evoltek-logo.jpg' },
     { src: `${brainDir}/.user_uploaded/media_1790748000064.png`, dest: 'network-ref.png' },
     { src: `${brainDir}/.user_uploaded/media_1790749323514.png`, dest: 'network-carousel.png' },
     { src: `${brainDir}/.user_uploaded/media_1790758765631.jpg`, dest: 'daylight-hero-bg.jpg' },
@@ -26,7 +32,6 @@ try {
     { src: `${brainDir}/.user_uploaded/media_1790760569771.png`, dest: 'investment-models-ref.png' },
     { src: `${brainDir}/.user_uploaded/media_1790764379968.png`, dest: 'booking-cards.png' },
     { src: `${brainDir}/.user_uploaded/media_1790771966234.jpg`, dest: 'franchise-opportunity-bg.jpg' },
-    { src: `${brainDir}/.user_uploaded/media_1790772813095.jpg`, dest: 'franchise-daylight.jpg' },
     { src: `${brainDir}/.user_uploaded/media_1790774097668.png`, dest: 'app-showcase-bg.png' },
     { src: `${brainDir}/.user_uploaded/media_1790774612845.png`, dest: 'phone-crop.png' },
     { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/024f6433-49cd-4cbf-85b5-30d6a9d98e37/.user_uploaded/media_1790777270198.png', dest: 'phone-app-mockup.png' },
@@ -53,6 +58,22 @@ export default defineConfig({
       name: 'serve-hero-bg',
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
+          if (req.url === '/franchise-opportunity-charger.jpg' || req.url?.startsWith('/franchise-opportunity-charger.jpg') || req.url === '/franchise-daylight.jpg' || req.url?.startsWith('/franchise-daylight.jpg')) {
+            const uploadedCharger = 'C:/Users/HP/.gemini/antigravity-ide/brain/a18d06ec-0127-4cfa-bbea-bca8124b1054/.user_uploaded/media_1790829427017.jpg';
+            if (fs.existsSync(uploadedCharger)) {
+              res.setHeader('Content-Type', 'image/jpeg');
+              fs.createReadStream(uploadedCharger).pipe(res);
+              return;
+            }
+          }
+          if (req.url === '/evoltek-logo.png' || req.url?.startsWith('/evoltek-logo.png') || req.url === '/evoltek-logo.jpg' || req.url?.startsWith('/evoltek-logo.jpg')) {
+            const uploadedLogo = 'C:/Users/HP/.gemini/antigravity-ide/brain/a18d06ec-0127-4cfa-bbea-bca8124b1054/.user_uploaded/media_1790826967932.png';
+            if (fs.existsSync(uploadedLogo)) {
+              res.setHeader('Content-Type', 'image/png');
+              fs.createReadStream(uploadedLogo).pipe(res);
+              return;
+            }
+          }
           if (req.url === '/daylight-hero-bg.jpg' || req.url?.startsWith('/daylight-hero-bg.jpg')) {
             const newHeroBg = 'C:/Users/HP/.gemini/antigravity-ide/brain/f96c1a1c-e7f1-4a25-9f04-4a081dd79258/.user_uploaded/media_1790758765631.jpg';
             if (fs.existsSync(newHeroBg)) {
