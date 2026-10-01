@@ -115,6 +115,12 @@ export default function FranchiseOpportunitySection() {
         <div className="franchise-hero-split">
           {/* Left Text Column */}
           <div className="franchise-header-left">
+            {/* Section Label */}
+            <div className="franchise-section-label">
+              <span className="franchise-label-dot" />
+              FRANCHISE
+            </div>
+
             {/* Main Headline */}
             <h2 className="franchise-heading-daylight">
               <span className="head-dark">BUILD YOUR EV</span>
@@ -130,12 +136,12 @@ export default function FranchiseOpportunitySection() {
             </p>
           </div>
 
-          {/* Right Visual Column (Pristine Charger + EV Car Scene) */}
+          {/* Right Visual Column */}
           <div className="franchise-hero-right" aria-hidden="true">
             <div className="charger-portal-wrapper">
               <img
-                src="/franchise-opportunity-charger.jpg"
-                alt="EVOLTEK DC Fast Charger 1000V and Electric Vehicle"
+                src="/franchise-charger-new.jpg"
+                alt="EVOLTEK DC Fast Charger with Electric Vehicle at sunset"
                 className="charger-portal-img"
               />
             </div>

@@ -2607,6 +2607,47 @@ body {
   flex-direction: column;
 }
 
+.franchise-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(22, 163, 74, 0.1);
+  border: 1px solid rgba(22, 163, 74, 0.3);
+  color: #16a34a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 6px 16px 6px 12px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.franchise-label-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16a34a;
+  display: inline-block;
+  flex-shrink: 0;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+}
+
 .franchise-brand-row {
   display: inline-flex;
   flex-direction: column;
@@ -3989,5 +4030,28 @@ body {
 
   .title-bottom-line {
     font-size: 2rem;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 860px) {
+  .roi-calc-body {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .roi-calc-wrapper {
+    padding: 24px 20px;
+  }
+
+  .roi-slider-row {
+    grid-template-columns: 1fr 12px 1fr 54px;
+    gap: 6px;
+  }
+
+  .roi-result-card {
+    grid-template-columns: 36px 1fr 1fr;
+    gap: 10px;
+    padding: 14px 16px;
   }
 }
