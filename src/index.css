@@ -4364,7 +4364,9 @@ main>section {
   }
 
   .highway-hub-panoramic-img {
-    height: 400px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 440px;
   }
 
   .title-bottom-line {
@@ -4378,8 +4380,18 @@ main>section {
     gap: 12px;
   }
 
+  .highway-hub-photo-wrapper {
+    border-radius: 18px;
+    margin-bottom: 20px;
+  }
+
   .highway-hub-panoramic-img {
-    height: 320px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
   }
 
   .highway-hub-overlay-card {
@@ -4389,6 +4401,7 @@ main>section {
     max-width: 100%;
     margin-top: 14px;
     border-radius: 16px;
+    padding: 22px 18px;
   }
 
   .title-top-line {
@@ -4684,6 +4697,10 @@ main>section {
 }
 
 @media (max-width: 640px) {
+  .roi-calculator-container {
+    padding: 0;
+  }
+
   .roi-outputs-cards-grid {
     grid-template-columns: 1fr;
     gap: 14px;
