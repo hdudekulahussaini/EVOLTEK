@@ -218,18 +218,19 @@ main>section {
   overflow: visible;
 }
 
-/* Transparent dark wash keeps the background image visible while protecting the heading contrast. */
-.daylight-hero-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(90deg,
-      rgba(2, 20, 13, 0.72) 0%,
-      rgba(2, 20, 13, 0.5) 34%,
-      rgba(2, 20, 13, 0.2) 58%,
-      rgba(2, 20, 13, 0.04) 76%,
-      transparent 100%);
-  z-index: 1;
+.daylight-hero-banner {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.daylight-hero-cards-section {
+  position: relative;
+  width: 100%;
+  z-index: 20;
 }
 
 .daylight-hero-content {
@@ -262,29 +263,35 @@ main>section {
   text-align: left;
 }
 
+.daylight-hero-overlay {
+  display: none;
+}
+
 .daylight-eyebrow,
 .daylight-eyebrow-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  color: #ffffff;
-  font-size: 0.82rem;
-  font-weight: 750;
-  letter-spacing: 0.14em;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 6px 16px;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 9999px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  color: #064e3b;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .live-pulsing-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: #34d399;
+  background-color: #10b981;
   display: inline-block;
   animation: pulse-dot 2s infinite ease-in-out;
 }
@@ -304,14 +311,13 @@ main>section {
 }
 
 .eyebrow-bullet {
-  color: #34d399;
+  color: #059669;
   font-size: 0.85rem;
 }
 
 .eyebrow-accent-green {
-  color: #34d399;
+  color: #047857;
   font-weight: 850;
-  text-shadow: 0 0 12px rgba(52, 211, 153, 0.5);
 }
 
 .daylight-title {
@@ -320,20 +326,19 @@ main>section {
   line-height: 1.05;
   letter-spacing: -0.025em;
   color: #ffffff;
-  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.35);
   margin-bottom: 18px;
   font-family: var(--font-sans);
 }
 
 .title-line-1 {
   color: #ffffff;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.65);
 }
 
 .title-gradient-green {
   color: #34d399;
-  text-shadow: 0 2px 18px rgba(52, 211, 153, 0.5);
   font-weight: 950;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.65), 0 0 16px rgba(52, 211, 153, 0.5);
 }
 
 @media (min-width: 681px) {
@@ -344,12 +349,13 @@ main>section {
 }
 
 .daylight-description {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: #ffffff;
+  font-weight: 600;
   line-height: 1.65;
-  max-width: 540px;
-  margin-bottom: 26px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  max-width: 560px;
+  margin-bottom: 28px;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.7);
 }
 
 .daylight-cta-row {
@@ -401,22 +407,23 @@ main>section {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
+  background: #ffffff;
+  color: #0f172a;
   font-size: 0.92rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   padding: 12px 26px;
   border-radius: 9999px;
-  border: 1.5px solid rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(8px);
+  border: 1.5px solid #cbd5e1;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
   cursor: pointer;
   transition: all 0.25s ease;
   font-family: inherit;
 }
 
 .btn-daylight-secondary:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: #f8fafc;
+  border-color: #94a3b8;
   transform: translateY(-2px);
 }
 
@@ -542,24 +549,28 @@ main>section {
   width: 100%;
   height: 100%;
   display: block;
+  background: transparent;
+  mix-blend-mode: multiply;
 }
 
 .car-wave-img {
   object-fit: contain;
   object-position: left center;
+  background: transparent;
 }
 
 .highway-map-img {
   object-fit: cover;
   object-position: center;
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: transparent;
 }
 
 .roi-gauge-img {
   object-fit: contain;
   width: 62px;
   height: 42px;
+  background: transparent;
 }
 
 .roi-stat-wrapper {
@@ -746,65 +757,154 @@ main>section {
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 768px) {
   .daylight-hero-section {
     min-height: auto;
-    padding-top: 96px;
-    padding-bottom: 40px;
-    justify-content: flex-start;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-image: none !important;
+    background-color: #ffffff;
+  }
+
+  .daylight-hero-banner {
+    position: relative;
+    background-image: url('/image.png');
+    background-size: cover;
+    background-position: 65% center;
+    background-repeat: no-repeat;
+    padding-top: 140px;
+    padding-bottom: 90px;
+    min-height: clamp(680px, 88vh, 860px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .daylight-hero-content {
-    justify-content: flex-start;
-    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     padding: 0 16px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .daylight-hero-grid {
+    margin-top: 0;
+    margin-bottom: 0;
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 100%;
+  }
+
+  .daylight-hero-left {
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
   }
 
   .daylight-eyebrow,
   .daylight-eyebrow-badge {
     font-size: 0.72rem;
     letter-spacing: 0.08em;
-    margin-bottom: 10px;
-    padding: 5px 12px;
+    margin: 0 auto 12px auto;
+    padding: 6px 14px;
     flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    color: #064e3b;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    justify-content: center;
+    text-align: center;
   }
 
   .daylight-title {
-    font-size: clamp(1.95rem, 6.5vw, 2.5rem);
+    font-size: clamp(1.85rem, 6.2vw, 2.35rem);
     line-height: 1.12;
-    margin-bottom: 12px;
+    color: #ffffff;
+    margin: 0 auto 12px auto;
+    text-align: center;
+  }
+
+  .title-line-1 {
+    color: #ffffff;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.7);
+  }
+
+  .title-gradient-green {
+    color: #34d399;
+    font-weight: 950;
+    filter: none;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: initial;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.7), 0 0 14px rgba(52, 211, 153, 0.5);
   }
 
   .daylight-description {
-    font-size: 0.95rem;
+    font-size: 1.02rem;
+    color: #ffffff;
+    font-weight: 600;
     line-height: 1.55;
-    margin-bottom: 20px;
+    margin: 0 auto 22px auto;
+    max-width: 480px;
+    text-align: center;
+    text-shadow: 0 3px 16px rgba(0, 0, 0, 0.75);
   }
 
   .daylight-cta-row {
     flex-direction: column;
     width: 100%;
-    gap: 10px;
-    margin-bottom: 10px;
+    max-width: 360px;
+    margin: 0 auto;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
   }
 
   .btn-daylight-primary,
   .btn-daylight-secondary {
     width: 100%;
     justify-content: center;
-    padding: 12px 20px;
+    padding: 13px 20px;
+  }
+
+  /* Clean cards section on mobile - NO background image behind cards */
+  .daylight-hero-cards-section {
+    background: #ffffff;
+    padding: 16px 0 24px 0;
   }
 
   .hero-metrics-outside {
     transform: none;
-    margin-top: 20px;
+    margin-top: 0;
     grid-template-columns: 1fr;
     gap: 12px;
   }
 
   .daylight-mini-card {
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
     min-height: auto;
     padding: 14px 16px;
+    border-radius: 16px;
+  }
+
+  .daylight-mini-card:hover {
+    transform: none;
+    border-color: #cbd5e1 !important;
   }
 
   .daylight-cards-2x2 {
@@ -4193,57 +4293,80 @@ main>section {
   display: block;
 }
 
-/* Frosted Green Card Overlay on Left */
+/* Glassmorphism Info Card Overlay on Left */
 .highway-hub-overlay-card {
   position: absolute;
   left: 36px;
   top: 50%;
   transform: translateY(-50%);
-  width: 320px;
+  width: 330px;
   max-width: calc(100% - 72px);
-  background: linear-gradient(145deg, rgba(8, 48, 28, 0.88) 0%, rgba(4, 30, 18, 0.94) 100%);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(74, 222, 128, 0.3);
-  border-radius: 20px;
-  padding: 30px 26px;
+  background: linear-gradient(135deg, rgba(6, 44, 26, 0.65) 0%, rgba(3, 24, 15, 0.82) 100%);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 24px;
+  padding: 32px 28px;
   color: #ffffff;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.38);
+  box-shadow:
+    0 24px 50px -10px rgba(0, 0, 0, 0.45),
+    0 8px 24px rgba(16, 185, 129, 0.18),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.3);
   z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.highway-hub-overlay-card:hover {
+  border-color: rgba(74, 222, 128, 0.6);
+  box-shadow:
+    0 28px 60px -10px rgba(0, 0, 0, 0.5),
+    0 12px 30px rgba(16, 185, 129, 0.28),
+    inset 0 1px 2px rgba(255, 255, 255, 0.65);
 }
 
 .overlay-card-badge {
-  font-size: 0.76rem;
+  display: inline-block;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: #86efac;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(134, 239, 172, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px 12px;
+  border-radius: 9999px;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .overlay-card-heading {
-  font-size: 1.65rem;
-  font-weight: 850;
-  line-height: 1.2;
+  font-size: 1.7rem;
+  font-weight: 900;
+  line-height: 1.18;
   color: #ffffff;
   margin: 0 0 14px 0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
 }
 
 .overlay-card-text {
-  font-size: 0.88rem;
-  line-height: 1.55;
-  color: #d1fae5;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #ecfdf5;
   font-weight: 450;
   margin: 0 0 18px 0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
 
 .overlay-card-accent-line {
-  width: 44px;
+  width: 48px;
   height: 3.5px;
-  background: #22c55e;
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+  background: linear-gradient(90deg, #34d399 0%, #10b981 100%);
+  border-radius: 9999px;
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.8);
 }
 
 /* 6 Feature Cards Row */
@@ -4400,8 +4523,13 @@ main>section {
     width: 100%;
     max-width: 100%;
     margin-top: 14px;
-    border-radius: 16px;
-    padding: 22px 18px;
+    background: linear-gradient(135deg, rgba(6, 44, 26, 0.72) 0%, rgba(3, 24, 15, 0.88) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    padding: 24px 20px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.45);
   }
 
   .title-top-line {

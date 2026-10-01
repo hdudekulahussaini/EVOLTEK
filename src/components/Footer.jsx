@@ -172,7 +172,7 @@ export default function Footer() {
                 {/* Bottom Bar with Divider */}
                 <div className="footer-bottom-row">
                     <div className="footer-copyright-text">
-                        @ 2026 Evoltek. All Rights Reserved.
+                        © 2026 Evoltek. All Rights Reserved. <a href="https://sunseaz.com" target="_blank" rel="noopener noreferrer" className="sunseaz-link">sunseaz.com</a>
                     </div>
                     <nav className="footer-legal-nav" aria-label="Legal navigation">
                         <a href="#privacy">Privacy Policy</a>
