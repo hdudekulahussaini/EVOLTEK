@@ -123,7 +123,9 @@ export default function BookingToLaunchSection() {
                 </div>
 
                 {/* Step Card with Top Pointer */}
-                <div className="process-step-card">
+                <div
+                  className={`process-step-card ${step.title === 'TRACK' ? 'card-track process-step-card-track' : ''} ${step.title === 'LAUNCH' ? 'card-launch process-step-card-launch' : ''}`}
+                >
                   <div className="card-top-row">
                     <h3 className="card-step-title">{step.title}</h3>
                     <div className="card-top-icon-pill">
@@ -133,11 +135,14 @@ export default function BookingToLaunchSection() {
                   <p className="card-step-desc">{step.desc}</p>
 
                   {/* High Quality Real Visual Image */}
-                  <div className="step-illustration-wrap">
+                  <div
+                    className={`step-illustration-wrap ${step.title === 'TRACK' ? 'step-track-wrap' : ''} ${step.title === 'LAUNCH' ? 'step-launch-wrap' : ''}`}
+                    style={step.title === 'TRACK' ? { justifyContent: 'flex-end' } : undefined}
+                  >
                     <img
                       src={step.imageSrc}
                       alt={step.imageAlt}
-                      className="step-process-real-img"
+                      className={`step-process-real-img ${step.title === 'TRACK' ? 'step-track-img' : ''} ${step.title === 'LAUNCH' ? 'step-launch-img' : ''}`}
                       loading="lazy"
                     />
                   </div>

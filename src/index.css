@@ -2751,13 +2751,6 @@ main>section {
   min-height: auto;
   box-sizing: border-box;
   position: relative;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.process-step-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 40px -6px rgba(15, 118, 74, 0.14);
-  border-color: #0f764a;
 }
 
 /* Top little triangular pointer */
@@ -2773,10 +2766,6 @@ main>section {
   border-left: 1.5px solid rgba(198, 214, 204, 0.7);
   border-top: 1.5px solid rgba(198, 214, 204, 0.7);
   transform: translateX(-50%) rotate(45deg);
-}
-
-.process-step-card:hover::before {
-  border-color: #0f764a;
 }
 
 .card-top-row {
@@ -2827,6 +2816,49 @@ main>section {
   padding: 0;
 }
 
+/* TRACK Step in FROM BOOKING TO LAUNCH */
+.step-illustration-wrap.step-track-wrap,
+.process-step-card-track .step-illustration-wrap,
+.process-step-card.card-track,
+.process-step-col:nth-child(4) .step-illustration-wrap {
+  justify-content: flex-end;
+}
+
+.step-track-img,
+.process-step-card-track .step-process-real-img {
+  object-position: bottom right;
+}
+
+/* LAUNCH Step in FROM BOOKING TO LAUNCH - remove card side space */
+.step-illustration-wrap.step-launch-wrap,
+.process-step-card-launch .step-illustration-wrap,
+.process-step-col:nth-child(3) .step-illustration-wrap {
+  width: calc(100% + 30px) !important;
+  max-width: calc(100% + 30px) !important;
+  margin-left: -15px !important;
+  margin-right: -15px !important;
+  margin-bottom: -5px !important;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  overflow: hidden;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+}
+
+.step-launch-img,
+.process-step-card-launch .step-process-real-img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 215px !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: bottom center !important;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
 .step-process-real-img {
   height: 100%;
   max-height: 195px;
@@ -2841,11 +2873,6 @@ main>section {
   pointer-events: none;
 }
 
-.process-step-card:hover .step-process-real-img {
-  transform: translateY(-4px) scale(1.06);
-  filter: drop-shadow(0 18px 28px rgba(15, 118, 74, 0.24));
-}
-
 .step-3d-svg {
   width: 100%;
   max-height: 90px;
@@ -2858,7 +2885,6 @@ main>section {
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.1));
-  transition: transform 0.25s ease;
 }
 
 .step-flaticon-svg {
@@ -2867,13 +2893,7 @@ main>section {
   width: auto;
   height: auto;
   filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.08));
-  transition: transform 0.25s ease;
   overflow: visible;
-}
-
-.process-step-card:hover .step-card-img,
-.process-step-card:hover .step-flaticon-svg {
-  transform: translateY(-4px) scale(1.06);
 }
 
 /* Responsive Process Flow */
