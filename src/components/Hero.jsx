@@ -73,6 +73,9 @@ export default function Hero() {
 
   return (
     <section id="home" className="daylight-hero-section">
+      {/* Dual Gradient Overlay: Dark charcoal/black on left fading to center, soft light/gray on right */}
+      <div className="daylight-hero-overlay" aria-hidden="true" />
+
       {/* Top Banner Visual */}
       <div className="daylight-hero-banner">
         <div className="container daylight-hero-content">
@@ -97,7 +100,7 @@ export default function Hero() {
 
               {/* Subtitle / Paragraph */}
               <p className="daylight-description">
-                A convenient, reliable and scalable EV charging network connecting cities, highways and destinations.
+                “A convenient, reliable and scalable EV charging network connecting cities, highways and destinations.”
               </p>
 
               {/* CTA Buttons */}
