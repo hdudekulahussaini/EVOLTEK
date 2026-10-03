@@ -2816,17 +2816,34 @@ main>section {
   padding: 0;
 }
 
-/* TRACK Step in FROM BOOKING TO LAUNCH */
+/* TRACK Step in FROM BOOKING TO LAUNCH - hand touches card edge */
 .step-illustration-wrap.step-track-wrap,
 .process-step-card-track .step-illustration-wrap,
-.process-step-card.card-track,
 .process-step-col:nth-child(4) .step-illustration-wrap {
-  justify-content: flex-end;
+  width: calc(100% + 30px) !important;
+  max-width: calc(100% + 30px) !important;
+  margin-left: -15px !important;
+  margin-right: -15px !important;
+  margin-bottom: -5px !important;
+  border-bottom-right-radius: 18px;
+  overflow: hidden;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: flex-end !important;
 }
 
 .step-track-img,
 .process-step-card-track .step-process-real-img {
-  object-position: bottom right;
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 208px !important;
+  display: block !important;
+  object-fit: contain !important;
+  object-position: bottom right !important;
+  margin-right: -2px !important;
+  margin-bottom: -2px !important;
+  border-bottom-right-radius: 18px;
 }
 
 /* LAUNCH Step in FROM BOOKING TO LAUNCH - remove card side space */
