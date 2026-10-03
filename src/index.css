@@ -2581,7 +2581,7 @@ main>section {
 .booking-launch-section {
   position: relative;
   background-color: #ffffff;
-  padding: 50px 0;
+  padding: 25px 0 20px 0;
   overflow: hidden;
   border-top: 1px solid rgba(16, 185, 129, 0.12);
 }
@@ -2596,7 +2596,7 @@ main>section {
 /* Process Header Pill */
 .process-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 24px;
 }
 
 .process-pill-badge {
@@ -2709,7 +2709,7 @@ main>section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   filter: drop-shadow(0 5px 14px rgba(15, 118, 74, 0.28));
   transition: transform 0.25s ease;
   cursor: pointer;
@@ -2742,21 +2742,21 @@ main>section {
   height: 100%;
   flex-grow: 1;
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 18px;
+  border-radius: 20px;
   border: 1.5px solid rgba(198, 214, 204, 0.7);
-  padding: 16px 16px 12px 16px;
+  padding: 10px 14px 4px 14px;
   box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  min-height: 220px;
+  min-height: auto;
   box-sizing: border-box;
   position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .process-step-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px -6px rgba(15, 118, 74, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px -6px rgba(15, 118, 74, 0.14);
   border-color: #0f764a;
 }
 
@@ -2783,11 +2783,11 @@ main>section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .card-step-title {
-  font-size: 0.98rem;
+  font-size: 1.05rem;
   font-weight: 850;
   letter-spacing: -0.01em;
   color: #0f172a;
@@ -2796,9 +2796,9 @@ main>section {
 }
 
 .card-top-icon-pill {
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
   background: rgba(34, 197, 94, 0.12);
   display: flex;
   align-items: center;
@@ -2806,22 +2806,44 @@ main>section {
 }
 
 .card-step-desc {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: #475569;
   line-height: 1.35;
   font-weight: 500;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   min-height: auto;
 }
 
 /* 3D Illustration Container */
 .step-illustration-wrap {
-  margin-top: auto;
+  margin-top: 0;
+  margin-bottom: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  height: 85px;
+  flex: 1;
+  height: 195px;
   width: 100%;
+  padding: 0;
+}
+
+.step-process-real-img {
+  height: 100%;
+  max-height: 195px;
+  max-width: 98%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.1));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+  user-select: none;
+  pointer-events: none;
+}
+
+.process-step-card:hover .step-process-real-img {
+  transform: translateY(-4px) scale(1.06);
+  filter: drop-shadow(0 18px 28px rgba(15, 118, 74, 0.24));
 }
 
 .step-3d-svg {
