@@ -56,21 +56,21 @@ export default function InvestmentCalculator() {
   };
 
   return (
-    <div className="roi-calculator-container">
+    <div className="roi-calculator-container w-full max-w-[1240px] mx-auto">
       {/* Top Header */}
-      <div className="roi-calculator-header">
-        <h2 className="roi-title-exact">CALCULATE YOUR EV OPPORTUNITY</h2>
-        <p className="roi-subtitle-exact">
+      <div className="roi-calculator-header text-center mb-12">
+        <h2 className="roi-title-exact text-[clamp(1.9rem,3.4vw,2.8rem)] font-black tracking-tight text-slate-900 uppercase">CALCULATE YOUR EV OPPORTUNITY</h2>
+        <p className="roi-subtitle-exact text-slate-600 text-[1.05rem] mt-3 max-w-[700px] mx-auto">
           Customize your parameters to estimate real-time revenue, profit margins, and payback timeline.
         </p>
       </div>
 
       {/* Main 2-Column Dashboard Grid */}
-      <div className="roi-calculator-grid">
+      <div className="roi-calculator-grid grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
         {/* ================= LEFT COLUMN: INPUT SLIDERS ================= */}
-        <div className="roi-inputs-card">
+        <div className="roi-inputs-card bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-md flex flex-col gap-5">
           {/* Row 1: Number of Chargers */}
-          <div className="roi-input-row">
+          <div className="roi-input-row flex items-center justify-between gap-3 flex-wrap sm:flex-nowrap">
             <span className="roi-input-label">Number of Chargers (Units)</span>
             <span className="roi-input-chevron">›</span>
             <div className="roi-slider-track-wrap">
@@ -249,10 +249,10 @@ export default function InvestmentCalculator() {
         </div>
 
         {/* ================= RIGHT COLUMN: 6 METRIC CARDS ================= */}
-        <div className="roi-outputs-cards-grid">
+        <div className="roi-outputs-cards-grid grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Card 1: Total Investment */}
-          <div className="roi-stat-card">
-            <div className="roi-stat-icon-wrap">
+          <div className="roi-stat-card bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-emerald-500 transition-all duration-300 flex items-center gap-4">
+            <div className="roi-stat-icon-wrap w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-500/20 flex items-center justify-center shrink-0">
               {/* 3D Stack of Coins SVG */}
               <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
                 <ellipse cx="18" cy="10" rx="11" ry="4.5" fill="#10b981" />
@@ -261,15 +261,15 @@ export default function InvestmentCalculator() {
                 <path d="M7 20v5c0 2.5 4.9 4.5 11 4.5s11-2 11-4.5v-5" stroke="#064e3b" strokeWidth="2" fill="#059669" />
               </svg>
             </div>
-            <div className="roi-stat-text-wrap">
-              <span className="roi-stat-label">Total Investment</span>
-              <strong className="roi-stat-value">{formatINR(investmentAmount)}</strong>
+            <div className="roi-stat-text-wrap flex flex-col text-left">
+              <span className="roi-stat-label text-[0.82rem] font-semibold text-slate-500">Total Investment</span>
+              <strong className="roi-stat-value text-[1.3rem] font-black text-slate-900 tracking-tight leading-tight">{formatINR(investmentAmount)}</strong>
             </div>
           </div>
 
           {/* Card 2: Annual Revenue */}
-          <div className="roi-stat-card">
-            <div className="roi-stat-icon-wrap">
+          <div className="roi-stat-card bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-emerald-500 transition-all duration-300 flex items-center gap-4">
+            <div className="roi-stat-icon-wrap w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-500/20 flex items-center justify-center shrink-0">
               {/* Bar Chart with Upward Trend Arrow */}
               <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="20" x2="18" y2="10" />
@@ -279,15 +279,15 @@ export default function InvestmentCalculator() {
                 <polyline points="16 2 20 2 20 6" stroke="#059669" strokeWidth="2.4" />
               </svg>
             </div>
-            <div className="roi-stat-text-wrap">
-              <span className="roi-stat-label">Annual Revenue</span>
-              <strong className="roi-stat-value">{formatINR(calculations.annualRevenue)}</strong>
+            <div className="roi-stat-text-wrap flex flex-col text-left">
+              <span className="roi-stat-label text-[0.82rem] font-semibold text-slate-500">Annual Revenue</span>
+              <strong className="roi-stat-value text-[1.3rem] font-black text-slate-900 tracking-tight leading-tight">{formatINR(calculations.annualRevenue)}</strong>
             </div>
           </div>
 
           {/* Card 3: Net Annual Profit */}
-          <div className="roi-stat-card">
-            <div className="roi-stat-icon-wrap">
+          <div className="roi-stat-card bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-emerald-500 transition-all duration-300 flex items-center gap-4">
+            <div className="roi-stat-icon-wrap w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-500/20 flex items-center justify-center shrink-0">
               {/* 3D Green Coins Stack */}
               <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
                 <ellipse cx="14" cy="9" rx="9" ry="4" fill="#34d399" />
@@ -298,30 +298,30 @@ export default function InvestmentCalculator() {
                 <path d="M15 22v4c0 1.9 3.6 3.5 8 3.5s8-1.6 8-3.5v-4" stroke="#047857" strokeWidth="1.8" fill="#059669" />
               </svg>
             </div>
-            <div className="roi-stat-text-wrap">
-              <span className="roi-stat-label">Net Annual Profit</span>
-              <strong className="roi-stat-value">{formatINR(calculations.netAnnualProfit)}</strong>
+            <div className="roi-stat-text-wrap flex flex-col text-left">
+              <span className="roi-stat-label text-[0.82rem] font-semibold text-slate-500">Net Annual Profit</span>
+              <strong className="roi-stat-value text-[1.3rem] font-black text-slate-900 tracking-tight leading-tight">{formatINR(calculations.netAnnualProfit)}</strong>
             </div>
           </div>
 
           {/* Card 4: Payback Period */}
-          <div className="roi-stat-card">
-            <div className="roi-stat-icon-wrap">
+          <div className="roi-stat-card bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-emerald-500 transition-all duration-300 flex items-center gap-4">
+            <div className="roi-stat-icon-wrap w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-500/20 flex items-center justify-center shrink-0">
               {/* Clock with Arrow SVG */}
               <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="9" />
                 <polyline points="12 6 12 12 15 15" />
               </svg>
             </div>
-            <div className="roi-stat-text-wrap">
-              <span className="roi-stat-label">Payback Period</span>
-              <strong className="roi-stat-value">{calculations.paybackYears} years</strong>
+            <div className="roi-stat-text-wrap flex flex-col text-left">
+              <span className="roi-stat-label text-[0.82rem] font-semibold text-slate-500">Payback Period</span>
+              <strong className="roi-stat-value text-[1.3rem] font-black text-slate-900 tracking-tight leading-tight">{calculations.paybackYears} years</strong>
             </div>
           </div>
 
           {/* Card 5: 5-Year ROI */}
-          <div className="roi-stat-card">
-            <div className="roi-stat-icon-wrap">
+          <div className="roi-stat-card bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-emerald-500 transition-all duration-300 flex items-center gap-4">
+            <div className="roi-stat-icon-wrap w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-500/20 flex items-center justify-center shrink-0">
               {/* Green Graph Upward Bars */}
               <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M3 3v18h18" />
@@ -329,23 +329,23 @@ export default function InvestmentCalculator() {
                 <polyline points="14 9 18 9 18 13" stroke="#059669" strokeWidth="2.4" />
               </svg>
             </div>
-            <div className="roi-stat-text-wrap">
-              <span className="roi-stat-label">5-Year ROI</span>
-              <strong className="roi-stat-value">{calculations.fiveYearROI}%</strong>
+            <div className="roi-stat-text-wrap flex flex-col text-left">
+              <span className="roi-stat-label text-[0.82rem] font-semibold text-slate-500">5-Year ROI</span>
+              <strong className="roi-stat-value text-[1.3rem] font-black text-slate-900 tracking-tight leading-tight">{calculations.fiveYearROI}%</strong>
             </div>
           </div>
 
           {/* Card 6: Annual Energy Delivered */}
-          <div className="roi-stat-card">
-            <div className="roi-stat-icon-wrap">
+          <div className="roi-stat-card bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md hover:border-emerald-500 transition-all duration-300 flex items-center gap-4">
+            <div className="roi-stat-icon-wrap w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-500/20 flex items-center justify-center shrink-0">
               {/* Solid Green Energy Bolt SVG */}
               <svg width="34" height="34" viewBox="0 0 24 24" fill="#10b981">
                 <path d="M13 2L3 14h7v8l10-12h-7l3-8z" />
               </svg>
             </div>
-            <div className="roi-stat-text-wrap">
-              <span className="roi-stat-label">Annual Energy Delivered</span>
-              <strong className="roi-stat-value">{formatIndianNumber(calculations.annualEnergy)} kWh</strong>
+            <div className="roi-stat-text-wrap flex flex-col text-left">
+              <span className="roi-stat-label text-[0.82rem] font-semibold text-slate-500">Annual Energy Delivered</span>
+              <strong className="roi-stat-value text-[1.3rem] font-black text-slate-900 tracking-tight leading-tight">{formatIndianNumber(calculations.annualEnergy)} kWh</strong>
             </div>
           </div>
         </div>

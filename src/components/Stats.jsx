@@ -9,28 +9,17 @@ export default function Stats() {
   ];
 
   return (
-    <section style={{ padding: '60px 0', background: 'rgba(13, 18, 31, 0.4)', borderTop: '1px solid var(--border-subtle)' }}>
-      <div className="container">
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-          gap: '30px'
-        }}>
+    <section className="py-[60px] bg-[#0d121f]/40 border-t border-white/10" style={{ padding: '60px 0', background: 'rgba(13, 18, 31, 0.4)', borderTop: '1px solid var(--border-subtle)' }}>
+      <div className="container max-w-[1280px] mx-auto px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[30px]">
           {stats.map((s, idx) => (
-            <div key={idx} style={{ textAlign: 'left', padding: '16px' }}>
-              <div style={{
-                fontSize: '2.6rem',
-                fontWeight: '800',
-                fontFamily: 'var(--font-mono)',
-                color: 'var(--text-main)',
-                lineHeight: 1.1,
-                marginBottom: '8px'
-              }}>
+            <div key={idx} className="text-left p-4">
+              <div className="text-[2.6rem] font-extrabold font-mono text-white leading-[1.1] mb-2 flex items-baseline">
                 {s.val}
-                <span style={{ fontSize: '1.2rem', color: 'var(--accent-cyan)', marginLeft: '4px' }}>{s.unit}</span>
+                <span className="text-[1.2rem] text-cyan-400 ml-1">{s.unit}</span>
               </div>
-              <h4 style={{ fontSize: '1rem', fontWeight: '700', marginBottom: '4px' }}>{s.label}</h4>
-              <p style={{ fontSize: '0.82rem', color: 'var(--text-dim)' }}>{s.desc}</p>
+              <h4 className="text-[1rem] font-bold text-white mb-1">{s.label}</h4>
+              <p className="text-[0.82rem] text-slate-400">{s.desc}</p>
             </div>
           ))}
         </div>

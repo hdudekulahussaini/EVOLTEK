@@ -36,7 +36,7 @@ try {
     { src: `${brainDir}/.user_uploaded/media_1790771966234.jpg`, dest: 'franchise-opportunity-bg.jpg' },
     { src: `${brainDir}/.user_uploaded/media_1790774097668.png`, dest: 'app-showcase-bg.png' },
     { src: `${brainDir}/.user_uploaded/media_1790774612845.png`, dest: 'phone-crop.png' },
-    { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/024f6433-49cd-4cbf-85b5-30d6a9d98e37/.user_uploaded/media_1790777270198.png', dest: 'phone-app-mockup.png' },
+    { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/2bf45417-e241-455a-95d1-3206024630fd/.user_uploaded/media_1791521873198.png', dest: 'phone-app-mockup.png' },
     { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/024f6433-49cd-4cbf-85b5-30d6a9d98e37/highway_lounge_hub_1790777850223.jpg', dest: 'highway-lounge-hub.jpg' },
     { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/024f6433-49cd-4cbf-85b5-30d6a9d98e37/.user_uploaded/media_1790777339730.png', dest: 'highway-experience-exact.png' },
     { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/024f6433-49cd-4cbf-85b5-30d6a9d98e37/.user_uploaded/media_1790776057502.png', dest: 'ready-to-power-exact.png' },
@@ -408,8 +408,17 @@ try {
   // Ignore sync error
 }
 
+let tailwindcssPlugin = null;
+try {
+  const tailwindModule = await import('@tailwindcss/vite');
+  tailwindcssPlugin = (tailwindModule.default || tailwindModule)();
+} catch (e) {
+  // @tailwindcss/vite will activate once npm install is run
+}
+
 export default defineConfig({
   plugins: [
+    ...(tailwindcssPlugin ? [tailwindcssPlugin] : []),
     react(),
     {
       name: 'serve-hero-bg',
@@ -552,7 +561,7 @@ export default defineConfig({
             }
           }
           if (req.url === '/phone-app-mockup.png' || req.url?.startsWith('/phone-app-mockup.png')) {
-            const uploadedFile = 'C:/Users/HP/.gemini/antigravity-ide/brain/024f6433-49cd-4cbf-85b5-30d6a9d98e37/.user_uploaded/media_1790777270198.png';
+            const uploadedFile = 'C:/Users/HP/.gemini/antigravity-ide/brain/2bf45417-e241-455a-95d1-3206024630fd/.user_uploaded/media_1791521873198.png';
             if (fs.existsSync(uploadedFile)) {
               res.setHeader('Content-Type', 'image/png');
               fs.createReadStream(uploadedFile).pipe(res);

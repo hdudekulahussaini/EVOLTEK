@@ -12,9 +12,9 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div style={{ position: 'relative', minHeight: '100vh', backgroundColor: '#ffffff' }}>
+    <div className="relative min-h-screen bg-white" style={{ position: 'relative', minHeight: '100vh', backgroundColor: '#ffffff' }}>
       {/* Main Layout */}
-      <div style={{ position: 'relative', zIndex: 1 }}>
+      <div className="relative z-[1]" style={{ position: 'relative', zIndex: 1 }}>
         <Navbar />
         <main>
           <Hero />

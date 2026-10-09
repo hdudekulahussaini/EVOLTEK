@@ -13,6 +13,29 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap"
     rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-dark': '#040e0a',
+            'bg-surface': '#071711',
+            'accent-green': '#22c55e',
+            'accent-green-bright': '#38ef7d',
+            'accent-green-light': '#86efac',
+            'accent-mint': '#34d399',
+            'accent-amber': '#eab308',
+            'accent-lime': '#d9f99d',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
 </head>
 
 <body>

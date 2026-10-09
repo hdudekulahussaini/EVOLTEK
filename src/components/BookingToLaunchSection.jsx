@@ -55,18 +55,18 @@ export default function BookingToLaunchSection() {
   ];
 
   return (
-    <section id="process" className="booking-launch-section">
-      <div className="container booking-launch-container">
+    <section id="process" className="booking-launch-section relative py-20 bg-[#f7fbf8] overflow-hidden">
+      <div className="container booking-launch-container max-w-[1280px] mx-auto px-6 relative z-10">
         {/* Top Center Title Badge matching reference */}
-        <div className="process-header">
-          <div className="process-pill-badge">
+        <div className="process-header flex justify-center mb-14">
+          <div className="process-pill-badge inline-flex items-center gap-2 bg-[#064e3b] text-white font-extrabold text-[0.88rem] tracking-wider uppercase px-7 py-2.5 rounded-full shadow-md">
             <span>FROM BOOKING TO LAUNCH</span>
           </div>
         </div>
 
         {/* Top-Right Decorative Microchip Circuit */}
-        <div className="chip-decor decor-top-right" aria-hidden="true">
-          <svg viewBox="0 0 160 160" fill="none" className="chip-svg">
+        <div className="chip-decor decor-top-right absolute top-6 right-6 hidden md:block opacity-75 pointer-events-none" aria-hidden="true">
+          <svg viewBox="0 0 160 160" fill="none" className="chip-svg w-28 h-28">
             <path d="M 0 50 L 50 50 L 70 30 L 100 30" stroke="#cbd5e1" strokeWidth="1.2" />
             <path d="M 20 80 L 60 80 L 80 100 L 110 100" stroke="#cbd5e1" strokeWidth="1.2" />
             <path d="M 40 120 L 70 120 L 90 140 L 130 140" stroke="#cbd5e1" strokeWidth="1.2" />
@@ -74,14 +74,14 @@ export default function BookingToLaunchSection() {
             <circle cx="110" cy="100" r="2.5" fill="#94a3b8" />
             <circle cx="130" cy="140" r="2.5" fill="#94a3b8" />
           </svg>
-          <div className="chip-badge-card">
-            <span className="chip-brand">EVOLTEK</span>
+          <div className="chip-badge-card absolute bottom-2 right-2 bg-white px-2 py-0.5 rounded shadow-sm border border-slate-200">
+            <span className="chip-brand text-[0.65rem] font-bold text-slate-500">EVOLTEK</span>
           </div>
         </div>
 
         {/* Bottom-Left Decorative Microchip Circuit */}
-        <div className="chip-decor decor-bottom-left" aria-hidden="true">
-          <svg viewBox="0 0 160 160" fill="none" className="chip-svg">
+        <div className="chip-decor decor-bottom-left absolute bottom-6 left-6 hidden md:block opacity-75 pointer-events-none" aria-hidden="true">
+          <svg viewBox="0 0 160 160" fill="none" className="chip-svg w-28 h-28">
             <path d="M 160 110 L 110 110 L 90 130 L 60 130" stroke="#cbd5e1" strokeWidth="1.2" />
             <path d="M 140 80 L 100 80 L 80 60 L 50 60" stroke="#cbd5e1" strokeWidth="1.2" />
             <path d="M 120 40 L 90 40 L 70 20 L 30 20" stroke="#cbd5e1" strokeWidth="1.2" />
@@ -89,23 +89,23 @@ export default function BookingToLaunchSection() {
             <circle cx="50" cy="60" r="2.5" fill="#94a3b8" />
             <circle cx="30" cy="20" r="2.5" fill="#94a3b8" />
           </svg>
-          <div className="chip-badge-card">
-            <span className="chip-brand">EVOLTEK</span>
+          <div className="chip-badge-card absolute bottom-2 left-2 bg-white px-2 py-0.5 rounded shadow-sm border border-slate-200">
+            <span className="chip-brand text-[0.65rem] font-bold text-slate-500">EVOLTEK</span>
           </div>
         </div>
 
         {/* Interactive 4-Step Process Flow Grid */}
-        <div className="process-flow-wrapper">
+        <div className="process-flow-wrapper relative mt-6">
           {/* Horizontal Connecting Tube */}
-          <div className="process-connecting-line" aria-hidden="true"></div>
+          <div className="process-connecting-line absolute top-6 left-12 right-12 h-1 bg-emerald-200 hidden lg:block -z-0" aria-hidden="true"></div>
 
           {/* 4 Columns */}
-          <div className="process-steps-grid">
+          <div className="process-steps-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
             {steps.map((step) => (
-              <div key={step.num} className="process-step-col">
+              <div key={step.num} className="process-step-col flex flex-col items-center">
                 {/* Sage Green Hexagon Step Badge */}
-                <div className="step-hexagon-badge">
-                  <svg viewBox="0 0 100 110" className="hexagon-svg">
+                <div className="step-hexagon-badge relative w-12 h-14 flex items-center justify-center mb-4 text-white font-black text-lg">
+                  <svg viewBox="0 0 100 110" className="hexagon-svg absolute inset-0 w-full h-full">
                     <polygon
                       points="50 3, 97 28, 97 82, 50 107, 3 82, 3 28"
                       fill="url(#hexGrad)"
@@ -119,30 +119,30 @@ export default function BookingToLaunchSection() {
                       </linearGradient>
                     </defs>
                   </svg>
-                  <span className="hexagon-num">{step.num}</span>
+                  <span className="hexagon-num relative z-10">{step.num}</span>
                 </div>
 
                 {/* Step Card with Top Pointer */}
                 <div
-                  className={`process-step-card ${step.title === 'TRACK' ? 'card-track process-step-card-track' : ''} ${step.title === 'LAUNCH' ? 'card-launch process-step-card-launch' : ''}`}
+                  className={`process-step-card bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-lg hover:border-emerald-500 transition-all duration-300 w-full flex flex-col h-full ${step.title === 'TRACK' ? 'card-track process-step-card-track' : ''} ${step.title === 'LAUNCH' ? 'card-launch process-step-card-launch' : ''}`}
                 >
-                  <div className="card-top-row">
-                    <h3 className="card-step-title">{step.title}</h3>
-                    <div className="card-top-icon-pill">
+                  <div className="card-top-row flex items-center justify-between mb-2">
+                    <h3 className="card-step-title text-[1.1rem] font-black text-slate-900 uppercase">{step.title}</h3>
+                    <div className="card-top-icon-pill p-1.5 bg-emerald-50 rounded-lg">
                       {step.topIcon}
                     </div>
                   </div>
-                  <p className="card-step-desc">{step.desc}</p>
+                  <p className="card-step-desc text-[0.85rem] text-slate-600 mb-4">{step.desc}</p>
 
                   {/* High Quality Real Visual Image */}
                   <div
-                    className={`step-illustration-wrap ${step.title === 'TRACK' ? 'step-track-wrap' : ''} ${step.title === 'LAUNCH' ? 'step-launch-wrap' : ''}`}
+                    className={`step-illustration-wrap relative w-full h-44 flex items-center justify-center overflow-hidden rounded-xl bg-slate-50 ${step.title === 'TRACK' ? 'step-track-wrap' : ''} ${step.title === 'LAUNCH' ? 'step-launch-wrap' : ''}`}
                     style={step.title === 'TRACK' ? { justifyContent: 'flex-end' } : undefined}
                   >
                     <img
                       src={step.imageSrc}
                       alt={step.imageAlt}
-                      className={`step-process-real-img ${step.title === 'TRACK' ? 'step-track-img' : ''} ${step.title === 'LAUNCH' ? 'step-launch-img' : ''}`}
+                      className={`step-process-real-img max-h-full max-w-full object-contain ${step.title === 'TRACK' ? 'step-track-img' : ''} ${step.title === 'LAUNCH' ? 'step-launch-img' : ''}`}
                       loading="lazy"
                     />
                   </div>

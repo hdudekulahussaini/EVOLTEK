@@ -55,86 +55,45 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" style={{ padding: '80px 0', borderTop: '1px solid var(--border-subtle)' }}>
-      <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-          <span className="badge" style={{ marginBottom: '12px' }}>Architectural Breakthroughs</span>
-          <h2 style={{ fontSize: '2.4rem', fontWeight: '800', letterSpacing: '-0.02em', marginBottom: '12px' }}>
+    <section id="features" className="py-20 border-t border-white/10" style={{ padding: '80px 0', borderTop: '1px solid var(--border-subtle)' }}>
+      <div className="container max-w-[1280px] mx-auto px-6">
+        <div className="text-center mb-[50px]">
+          <span className="badge inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-3">Architectural Breakthroughs</span>
+          <h2 className="text-[2.4rem] font-extrabold tracking-[-0.02em] mb-3 text-white">
             Built with Zero Compromises
           </h2>
-          <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>
+          <p className="text-slate-400 max-w-[600px] mx-auto text-[1.05rem] leading-relaxed">
             Every subsystem is engineered to push beyond the physical limits of conventional electric vehicle architectures.
           </p>
         </div>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '24px'
-        }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feat, idx) => (
             <div
               key={idx}
-              className="glass-card"
-              style={{
-                padding: '30px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between'
-              }}
+              className="glass-card p-[30px] flex flex-col justify-between rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/10 hover:border-emerald-500/40 transition-all duration-300"
             >
               <div>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  marginBottom: '20px'
-                }}>
-                  <div style={{
-                    width: '46px',
-                    height: '46px',
-                    borderRadius: '12px',
-                    background: 'rgba(255, 255, 255, 0.04)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: '1px solid var(--border-subtle)'
-                  }}>
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-[46px] h-[46px] rounded-xl bg-white/[0.04] flex items-center justify-center border border-white/10">
                     {feat.icon}
                   </div>
-                  <span style={{
-                    fontSize: '0.75rem',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.06em',
-                    color: 'var(--text-dim)',
-                    fontWeight: '600'
-                  }}>
+                  <span className="text-[0.75rem] uppercase tracking-[0.06em] text-slate-400 font-semibold">
                     {feat.tag}
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', marginBottom: '10px' }}>
+                <h3 className="text-[1.25rem] font-bold mb-2.5 text-white">
                   {feat.title}
                 </h3>
-                <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '24px' }}>
+                <p className="text-[0.92rem] text-slate-400 leading-[1.6] mb-6">
                   {feat.description}
                 </p>
               </div>
 
-              <div style={{
-                paddingTop: '16px',
-                borderTop: '1px solid var(--border-subtle)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between'
-              }}>
-                <span style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>Benchmark:</span>
-                <span style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontWeight: '700',
-                  color: 'var(--text-main)',
-                  fontSize: '0.95rem'
-                }}>
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+                <span className="text-[0.8rem] text-slate-500">Benchmark:</span>
+                <span className="font-mono font-bold text-white text-[0.95rem]">
                   {feat.metric}
                 </span>
               </div>

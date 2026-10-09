@@ -124,25 +124,25 @@ export default function ChargingHubsSection() {
         </svg>
       </div>
 
-      <div className="container hubs-container">
+      <div className="container hubs-container max-w-[1280px] mx-auto px-6 relative z-10">
         {/* Section Heading matching screenshot */}
-        <div className="hubs-header">
-          <h2 className="hubs-main-title">
+        <div className="hubs-header text-center mb-14">
+          <h2 className="hubs-main-title text-[clamp(1.9rem,3.4vw,2.8rem)] font-black tracking-tight text-slate-900 uppercase">
             OUR CHARGING STATIONS &amp; EV HUBS
           </h2>
         </div>
 
         {/* 3-Column Showcase: Highway Card | DC Fast Charger | City Card & Addons */}
-        <div className="hubs-showcase-grid">
+        <div className="hubs-showcase-grid grid grid-cols-1 lg:grid-cols-[1.1fr_1fr_1.1fr] gap-8 items-center">
           {/* Column 1: Highway Charging Station Card */}
-          <div className="hubs-col hubs-col-left">
-            <div className="hub-info-card highway-card">
-              <h3 className="hub-card-title">HIGHWAY CHARGING STATION</h3>
+          <div className="hubs-col hubs-col-left relative">
+            <div className="hub-info-card highway-card bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-lg transition-all duration-300">
+              <h3 className="hub-card-title text-[1.1rem] font-black text-slate-900 mb-5 pb-3 border-b border-slate-100 uppercase">HIGHWAY CHARGING STATION</h3>
 
-              <div className="hub-features-list">
+              <div className="hub-features-list flex flex-col gap-4">
                 {/* Feature 1: Space Required */}
-                <div className="hub-feature-item">
-                  <div className="hub-feature-icon-badge">
+                <div className="hub-feature-item flex items-center gap-3.5">
+                  <div className="hub-feature-icon-badge w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-500/20 flex items-center justify-center shrink-0">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M4 14V4h10" />
                       <path d="M4 20h16" />
@@ -152,25 +152,25 @@ export default function ChargingHubsSection() {
                     </svg>
                   </div>
                   <div>
-                    <span className="hub-feature-label">Space Required:</span>
-                    <strong className="hub-feature-val">Minimum 1 Acre</strong>
+                    <span className="hub-feature-label block text-[0.8rem] text-slate-500 font-medium">Space Required:</span>
+                    <strong className="hub-feature-val block text-[0.95rem] text-slate-900 font-bold">Minimum 1 Acre</strong>
                   </div>
                 </div>
 
                 {/* Feature 2: Power */}
-                <div className="hub-feature-item">
-                  <div className="hub-feature-icon-badge">
+                <div className="hub-feature-item flex items-center gap-3.5">
+                  <div className="hub-feature-icon-badge w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-500/20 flex items-center justify-center shrink-0">
                     <Zap size={20} color="#16a34a" strokeWidth={2.4} />
                   </div>
                   <div>
-                    <span className="hub-feature-label">Power:</span>
-                    <strong className="hub-feature-val">60 kW to 480 kW</strong>
+                    <span className="hub-feature-label block text-[0.8rem] text-slate-500 font-medium">Power:</span>
+                    <strong className="hub-feature-val block text-[0.95rem] text-slate-900 font-bold">60 kW to 480 kW</strong>
                   </div>
                 </div>
 
                 {/* Feature 3: Connectors */}
-                <div className="hub-feature-item">
-                  <div className="hub-feature-icon-badge">
+                <div className="hub-feature-item flex items-center gap-3.5">
+                  <div className="hub-feature-icon-badge w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-500/20 flex items-center justify-center shrink-0">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="6" y="4" width="12" height="12" rx="3" />
                       <circle cx="9" cy="9" r="1.2" fill="#16a34a" />
@@ -180,16 +180,16 @@ export default function ChargingHubsSection() {
                     </svg>
                   </div>
                   <div>
-                    <span className="hub-feature-label">Connectors:</span>
-                    <strong className="hub-feature-val">DC Fast Charging</strong>
+                    <span className="hub-feature-label block text-[0.8rem] text-slate-500 font-medium">Connectors:</span>
+                    <strong className="hub-feature-val block text-[0.95rem] text-slate-900 font-bold">DC Fast Charging</strong>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Circuit Branch from card to charger */}
-            <div className="hub-connector-branch-left" aria-hidden="true">
-              <svg viewBox="0 0 140 160" className="connector-branch-svg" fill="none">
+            <div className="hub-connector-branch-left hidden lg:block absolute -right-16 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
+              <svg viewBox="0 0 140 160" className="connector-branch-svg w-20 h-24" fill="none">
                 <path d="M 0 40 C 60 40, 90 70, 140 70" stroke="#86efac" strokeWidth="2" />
                 <path d="M 0 90 C 60 90, 80 80, 140 80" stroke="#86efac" strokeWidth="2" />
                 <path d="M 0 135 C 70 135, 90 90, 140 90" stroke="#86efac" strokeWidth="2" />
@@ -203,26 +203,26 @@ export default function ChargingHubsSection() {
           </div>
 
           {/* Column 2: Centerpiece EVOLTEK DC Fast Charger Machine */}
-          <div className="hubs-col hubs-col-center">
-            <div className="charger-unit-wrapper">
+          <div className="hubs-col hubs-col-center flex items-center justify-center">
+            <div className="charger-unit-wrapper relative flex items-center justify-center py-4">
               <img
                 src={chargerImage}
                 alt="EVOLTEK DC Fast Charger Unit"
-                className="charger-unit-image"
+                className="charger-unit-image max-h-[500px] w-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.18)]"
               />
             </div>
           </div>
 
           {/* Column 3: City Charging Station Card & EV Hub Lifestyle Add-ons */}
-          <div className="hubs-col hubs-col-right">
+          <div className="hubs-col hubs-col-right relative flex flex-col gap-6">
             {/* Top: City Charging Station Card */}
-            <div className="hub-info-card city-card">
-              <h3 className="hub-card-title">CITY CHARGING STATION</h3>
+            <div className="hub-info-card city-card bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-lg transition-all duration-300">
+              <h3 className="hub-card-title text-[1.1rem] font-black text-slate-900 mb-5 pb-3 border-b border-slate-100 uppercase">CITY CHARGING STATION</h3>
 
-              <div className="hub-features-list">
+              <div className="hub-features-list flex flex-col gap-4">
                 {/* Feature 1: Space Required */}
-                <div className="hub-feature-item">
-                  <div className="hub-feature-icon-badge">
+                <div className="hub-feature-item flex items-center gap-3.5">
+                  <div className="hub-feature-icon-badge w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-500/20 flex items-center justify-center shrink-0">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="3" y="3" width="18" height="18" rx="2" />
                       <path d="M3 9h18" />
@@ -230,25 +230,25 @@ export default function ChargingHubsSection() {
                     </svg>
                   </div>
                   <div>
-                    <span className="hub-feature-label">Space Required:</span>
-                    <strong className="hub-feature-val">Minimum 2000 sq ft</strong>
+                    <span className="hub-feature-label block text-[0.8rem] text-slate-500 font-medium">Space Required:</span>
+                    <strong className="hub-feature-val block text-[0.95rem] text-slate-900 font-bold">Minimum 2000 sq ft</strong>
                   </div>
                 </div>
 
                 {/* Feature 2: Power */}
-                <div className="hub-feature-item">
-                  <div className="hub-feature-icon-badge">
+                <div className="hub-feature-item flex items-center gap-3.5">
+                  <div className="hub-feature-icon-badge w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-500/20 flex items-center justify-center shrink-0">
                     <Zap size={20} color="#16a34a" strokeWidth={2.4} />
                   </div>
                   <div>
-                    <span className="hub-feature-label">Power:</span>
-                    <strong className="hub-feature-val">60 kW to 480 kW</strong>
+                    <span className="hub-feature-label block text-[0.8rem] text-slate-500 font-medium">Power:</span>
+                    <strong className="hub-feature-val block text-[0.95rem] text-slate-900 font-bold">60 kW to 480 kW</strong>
                   </div>
                 </div>
 
                 {/* Feature 3: Connectors */}
-                <div className="hub-feature-item">
-                  <div className="hub-feature-icon-badge">
+                <div className="hub-feature-item flex items-center gap-3.5">
+                  <div className="hub-feature-icon-badge w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-500/20 flex items-center justify-center shrink-0">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="6" y="4" width="12" height="12" rx="3" />
                       <circle cx="9" cy="9" r="1.2" fill="#16a34a" />
@@ -258,32 +258,21 @@ export default function ChargingHubsSection() {
                     </svg>
                   </div>
                   <div>
-                    <span className="hub-feature-label">Connectors:</span>
-                    <strong className="hub-feature-val">DC Fast Charging</strong>
+                    <span className="hub-feature-label block text-[0.8rem] text-slate-500 font-medium">Connectors:</span>
+                    <strong className="hub-feature-val block text-[0.95rem] text-slate-900 font-bold">DC Fast Charging</strong>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Circuit Branch from charger to City card */}
-            <div className="hub-connector-branch-right" aria-hidden="true">
-              <svg viewBox="0 0 140 120" className="connector-branch-svg" fill="none">
-                <path d="M 0 60 C 50 60, 80 30, 140 30" stroke="#86efac" strokeWidth="2" />
-                <path d="M 0 60 C 50 60, 80 85, 140 85" stroke="#86efac" strokeWidth="2" />
-                <circle cx="140" cy="30" r="3.5" fill="#16a34a" />
-                <circle cx="140" cy="85" r="3.5" fill="#16a34a" />
-                <circle cx="65" cy="45" r="3" fill="#16a34a" />
-              </svg>
-            </div>
-
             {/* Bottom: EV Hub Lifestyle Add-ons (Green Card) */}
-            <div className="lifestyle-addons-card">
-              <h4 className="addons-title">EV Hub Lifestyle Add-ons</h4>
+            <div className="lifestyle-addons-card bg-gradient-to-br from-[#064e3b] to-[#022c22] rounded-2xl p-5 text-white shadow-md">
+              <h4 className="addons-title text-[0.95rem] font-bold text-emerald-200 mb-4 text-center uppercase tracking-wider">EV Hub Lifestyle Add-ons</h4>
 
-              <div className="addons-pipeline-row">
+              <div className="addons-pipeline-row flex items-center justify-between">
                 {/* Cafeteria */}
-                <div className="addon-node">
-                  <div className="addon-icon-circle">
+                <div className="addon-node flex flex-col items-center text-center gap-2">
+                  <div className="addon-icon-circle w-10 h-10 rounded-full bg-emerald-700/80 border border-emerald-400/40 flex items-center justify-center text-white shadow-sm">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
                       <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
@@ -292,30 +281,30 @@ export default function ChargingHubsSection() {
                       <line x1="14" y1="1" x2="14" y2="4" />
                     </svg>
                   </div>
-                  <span className="addon-label">Cafeteria</span>
+                  <span className="addon-label text-[0.72rem] font-semibold text-slate-200 leading-tight">Cafeteria</span>
                 </div>
 
-                <div className="addon-connector-line">
-                  <div className="line-dot"></div>
+                <div className="addon-connector-line flex-grow h-[1px] bg-emerald-500/40 mx-2 relative">
+                  <div className="line-dot w-1.5 h-1.5 rounded-full bg-emerald-400 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                 </div>
 
                 {/* Restaurant */}
-                <div className="addon-node">
-                  <div className="addon-icon-circle">
+                <div className="addon-node flex flex-col items-center text-center gap-2">
+                  <div className="addon-icon-circle w-10 h-10 rounded-full bg-emerald-700/80 border border-emerald-400/40 flex items-center justify-center text-white shadow-sm">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M18 2v20M18 2a3 3 0 0 0-3 3v4a3 3 0 0 0 3 3M6 2v20M3 2v6a3 3 0 0 0 6 0V2" />
                     </svg>
                   </div>
-                  <span className="addon-label">Restaurant</span>
+                  <span className="addon-label text-[0.72rem] font-semibold text-slate-200 leading-tight">Restaurant</span>
                 </div>
 
-                <div className="addon-connector-line">
-                  <div className="line-dot"></div>
+                <div className="addon-connector-line flex-grow h-[1px] bg-emerald-500/40 mx-2 relative">
+                  <div className="line-dot w-1.5 h-1.5 rounded-full bg-emerald-400 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                 </div>
 
                 {/* Gaming Playzone */}
-                <div className="addon-node">
-                  <div className="addon-icon-circle">
+                <div className="addon-node flex flex-col items-center text-center gap-2">
+                  <div className="addon-icon-circle w-10 h-10 rounded-full bg-emerald-700/80 border border-emerald-400/40 flex items-center justify-center text-white shadow-sm">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="6" y1="12" x2="10" y2="12" />
                       <line x1="8" y1="10" x2="8" y2="14" />
@@ -324,14 +313,13 @@ export default function ChargingHubsSection() {
                       <rect x="2" y="6" width="20" height="12" rx="6" />
                     </svg>
                   </div>
-                  <span className="addon-label">Gaming<br />Playzone</span>
+                  <span className="addon-label text-[0.72rem] font-semibold text-slate-200 leading-tight">Gaming<br />Playzone</span>
                 </div>
               </div>
             </div>
-
             {/* Lifestyle add-on horizontal connector */}
-            <div className="hub-connector-branch-lifestyle" aria-hidden="true">
-              <svg viewBox="0 0 120 40" className="connector-branch-svg" fill="none">
+            <div className="hub-connector-branch-lifestyle hidden lg:block" aria-hidden="true">
+              <svg viewBox="0 0 120 40" className="connector-branch-svg w-28 h-10" fill="none">
                 <path d="M 0 20 L 120 20" stroke="#86efac" strokeWidth="2" />
                 <circle cx="0" cy="20" r="3.5" fill="#16a34a" />
                 <circle cx="60" cy="20" r="3" fill="#16a34a" />

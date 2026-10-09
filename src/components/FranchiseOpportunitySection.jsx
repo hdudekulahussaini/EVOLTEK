@@ -109,61 +109,61 @@ export default function FranchiseOpportunitySection() {
   ];
 
   return (
-    <section id="franchise" className="franchise-daylight-section">
-      <div className="container franchise-daylight-container">
+    <section id="franchise" className="franchise-daylight-section relative py-20 bg-white overflow-hidden">
+      <div className="container franchise-daylight-container max-w-[1280px] mx-auto px-6">
         {/* Top Split Header: Left Info + Right Canopy Charger Visual */}
-        <div className="franchise-hero-split">
+        <div className="franchise-hero-split grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center mb-14">
           {/* Left Text Column */}
-          <div className="franchise-header-left">
+          <div className="franchise-header-left flex flex-col text-left">
             {/* Section Label */}
-            <div className="franchise-section-label">
-              <span className="franchise-label-dot" />
+            <div className="franchise-section-label inline-flex items-center gap-2 text-[0.82rem] font-bold text-green-700 tracking-widest uppercase mb-3">
+              <span className="franchise-label-dot w-2 h-2 rounded-full bg-green-500" />
               FRANCHISE
             </div>
 
             {/* Main Headline */}
-            <h2 className="franchise-heading-daylight">
-              <span className="head-dark">BUILD YOUR EV</span>
+            <h2 className="franchise-heading-daylight text-[clamp(2.2rem,3.8vw,3.2rem)] font-black leading-[1.08] tracking-tight uppercase mb-4">
+              <span className="head-dark text-[#062318]">BUILD YOUR EV</span>
               <br />
-              <span className="head-green">CHARGING OPPORTUNITY.</span>
+              <span className="head-green text-green-600">CHARGING OPPORTUNITY.</span>
             </h2>
 
             {/* Subtitle */}
-            <p className="franchise-sub-daylight">
+            <p className="franchise-sub-daylight text-slate-600 text-[1.05rem] leading-[1.6]">
               Be part of a cleaner future. Leverage the growing EV ecosystem
-              <br className="desktop-break" />
+              <br className="desktop-break hidden sm:block" />
               with a trusted partner — EVOLTEK.
             </p>
           </div>
 
           {/* Right Visual Column */}
-          <div className="franchise-hero-right" aria-hidden="true">
-            <div className="charger-portal-wrapper">
+          <div className="franchise-hero-right flex items-center justify-center" aria-hidden="true">
+            <div className="charger-portal-wrapper relative rounded-2xl overflow-hidden shadow-lg border border-slate-200/60 max-h-[280px]">
               <img
                 src="/franchise-charger-new.jpg"
                 alt="EVOLTEK DC Fast Charger with Electric Vehicle at sunset"
-                className="charger-portal-img"
+                className="charger-portal-img w-full h-auto object-cover max-h-[280px]"
               />
             </div>
           </div>
         </div>
 
         {/* 8 Cards Grid (2 rows x 4 columns) */}
-        <div className="franchise-daylight-grid">
+        <div className="franchise-daylight-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {cards.map((card, idx) => (
             <div
               key={card.id}
-              className={`daylight-opportunity-card ${hoveredCard === idx ? 'card-active' : ''}`}
+              className={`daylight-opportunity-card bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm hover:border-emerald-500 hover:shadow-lg transition-all duration-300 flex flex-col justify-between ${hoveredCard === idx ? 'card-active border-emerald-500 shadow-lg -translate-y-1' : ''}`}
               onMouseEnter={() => setHoveredCard(idx)}
               onMouseLeave={() => setHoveredCard(null)}
             >
               {/* Card Top Row: Glossy Deep Emerald 3D Badge + Title */}
-              <div className="card-top-content">
-                <div className="daylight-card-icon-button">
+              <div className="card-top-content flex items-center gap-4 mb-3">
+                <div className="daylight-card-icon-button w-12 h-12 rounded-full bg-gradient-to-br from-[#064e3b] to-[#042f24] text-white flex items-center justify-center shrink-0 shadow-md">
                   {card.icon}
                 </div>
                 <div className="daylight-card-title-block">
-                  <h3 className="daylight-card-title">
+                  <h3 className="daylight-card-title text-[0.95rem] font-black text-slate-900 leading-tight uppercase">
                     {card.title.split('\n').map((line, i) => (
                       <React.Fragment key={i}>
                         {line}
@@ -171,12 +171,12 @@ export default function FranchiseOpportunitySection() {
                       </React.Fragment>
                     ))}
                   </h3>
-                  <div className="daylight-card-divider" />
+                  <div className="daylight-card-divider w-8 h-0.5 bg-emerald-500 mt-1" />
                 </div>
               </div>
 
               {/* Card Description */}
-              <p className="daylight-card-desc">
+              <p className="daylight-card-desc text-[0.82rem] text-slate-600 leading-normal">
                 {card.desc.split('\n').map((line, i) => (
                   <React.Fragment key={i}>
                     {line}

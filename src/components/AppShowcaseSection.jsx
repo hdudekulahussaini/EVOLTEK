@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 
 export default function AppShowcaseSection() {
   const [activeFeature, setActiveFeature] = useState(0);
-  const [phoneImage, setPhoneImage] = useState('/phone-app-mockup.png');
+  const [phoneImage, setPhoneImage] = useState('/phone-app-mockup.png?v=franchise_app_v2');
 
   useEffect(() => {
     const image = new Image();
-    image.src = '/phone-app-mockup.png';
+    image.src = '/phone-app-mockup.png?v=franchise_app_v2';
     image.onload = () => {
       const canvas = document.createElement('canvas');
       canvas.width = image.naturalWidth;
@@ -133,30 +133,30 @@ export default function AppShowcaseSection() {
   ];
 
   return (
-    <section id="app" className="app-showcase-section">
-      <div className="container app-showcase-container">
+    <section id="app" className="app-showcase-section relative py-20 bg-white overflow-hidden">
+      <div className="container app-showcase-container max-w-[1280px] mx-auto px-6">
         {/* 3-Column Layout: Left Intro + Center Phone Mockup + Right 6 Glowing Feature Pills */}
-        <div className="app-showcase-grid">
+        <div className="app-showcase-grid grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr_1.2fr] items-center gap-10 lg:gap-8">
           {/* Left Column */}
-          <div className="app-col-intro">
+          <div className="app-col-intro flex flex-col justify-center text-left">
             {/* Main Headline */}
-            <h2 className="app-main-heading">
-              <span className="head-dark-green">YOUR STATION.</span>
+            <h2 className="app-main-heading text-[clamp(2.2rem,3.6vw,3.2rem)] font-black leading-[1.08] tracking-tight uppercase mb-5">
+              <span className="head-dark-green text-[#062318]">YOUR STATION.</span>
               <br />
-              <span className="head-glow-green">YOUR NUMBERS.</span>
+              <span className="head-glow-green text-green-600 drop-shadow-[0_0_20px_rgba(34,197,94,0.35)]">YOUR NUMBERS.</span>
               <br />
-              <span className="head-dark-green">YOUR CONTROL.</span>
+              <span className="head-dark-green text-[#062318]">YOUR CONTROL.</span>
             </h2>
 
             {/* Subtitle */}
-            <p className="app-lead-desc">
+            <p className="app-lead-desc text-slate-600 text-[1.05rem] leading-[1.6] mb-8 font-normal">
               Manage your station, track performance,
-              <br className="desktop-break" />
+              <br className="desktop-break hidden sm:block" />
               and view earnings—all in one app.
             </p>
 
             {/* App Store Download Badges */}
-            <div className="app-showcase-store-badges">
+            <div className="app-showcase-store-badges flex items-center gap-3.5 flex-wrap">
               {/* Google Play */}
               <a
                 href="#googleplay"
@@ -164,10 +164,10 @@ export default function AppShowcaseSection() {
                   e.preventDefault();
                   alert('Opening EVOLTEK Franchise App on Google Play Store...');
                 }}
-                className="store-badge-btn app-store-btn-custom"
+                className="store-badge-btn app-store-btn-custom inline-flex items-center gap-3 bg-[#0a1811] hover:bg-[#122b1f] text-white py-2.5 px-5 rounded-xl border border-white/10 shadow-lg transition-all duration-200 hover:-translate-y-0.5"
                 aria-label="Get it on Google Play"
               >
-                <div className="badge-svg-icon">
+                <div className="badge-svg-icon shrink-0">
                   <svg viewBox="0 0 512 512" width="24" height="24">
                     <path fill="#00E676" d="M30.6 8.5C18.9 14.9 11 27.5 11 42.1v427.8c0 14.6 7.9 27.2 19.6 33.6l239.5-247.5L30.6 8.5z" />
                     <path fill="#FFD600" d="M449.6 226.7l-66.2-38.2-64.8 67.5 64.8 67.5 66.2-38.2c16.3-9.4 26.4-26.8 26.4-49.3s-10.1-39.9-26.4-49.3z" />
@@ -175,9 +175,9 @@ export default function AppShowcaseSection() {
                     <path fill="#FF1744" d="M318.6 256l64.8-85.6L102.8 8.4C98.3 1.1 90.4-3.1 82.2-3.1c-4.3 0-8.4 1.1-12.1 3.1L318.6 256z" />
                   </svg>
                 </div>
-                <div className="badge-text-block">
-                  <span className="badge-eyebrow">GET IT ON</span>
-                  <span className="badge-store-name">Google Play</span>
+                <div className="badge-text-block text-left">
+                  <span className="badge-eyebrow block text-[0.62rem] font-bold text-slate-400 tracking-wider">GET IT ON</span>
+                  <span className="badge-store-name block text-[0.92rem] font-bold text-white leading-tight">Google Play</span>
                 </div>
               </a>
 
@@ -188,55 +188,55 @@ export default function AppShowcaseSection() {
                   e.preventDefault();
                   alert('Opening EVOLTEK Franchise App on Apple App Store...');
                 }}
-                className="store-badge-btn app-store-btn-custom"
+                className="store-badge-btn app-store-btn-custom inline-flex items-center gap-3 bg-[#0a1811] hover:bg-[#122b1f] text-white py-2.5 px-5 rounded-xl border border-white/10 shadow-lg transition-all duration-200 hover:-translate-y-0.5"
                 aria-label="Download on the App Store"
               >
-                <div className="badge-svg-icon apple-store-icon">
+                <div className="badge-svg-icon apple-store-icon shrink-0">
                   <svg viewBox="0 0 170 170" width="23" height="23" fill="#ffffff">
                     <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.81-11.96-14.34-6.41-9.78-11.4-20.76-14.98-32.96-3.58-12.19-5.37-23.77-5.37-34.74 0-14.24 3.73-26.06 11.19-35.45 7.46-9.39 16.9-14.15 28.32-14.28 4.8 0 10.06 1.25 15.78 3.76 5.73 2.5 9.47 3.82 11.24 3.96 1.76-.14 5.76-1.55 12-4.22 6.24-2.68 11.75-3.86 16.53-3.54 12.39.82 22.37 5.74 29.94 14.77-10.87 6.6-16.2 15.53-15.98 26.8.22 8.78 3.72 16.08 10.51 21.9 6.78 5.82 14.77 9.17 23.96 10.05-2.07 6.07-4.46 12.08-7.17 18.04zM119.22 31.02c0-7.39 2.66-14.28 7.98-20.67 5.32-6.39 11.83-10.12 19.53-11.19.11 1.09.16 1.95.16 2.59 0 7.28-2.77 14.23-8.32 20.85-5.55 6.62-12.18 10.37-19.89 11.25.11-.87.17-1.46.17-1.77z" />
                   </svg>
                 </div>
-                <div className="badge-text-block">
-                  <span className="badge-eyebrow badge-eyebrow-apple">Download on the</span>
-                  <span className="badge-store-name">App Store</span>
+                <div className="badge-text-block text-left">
+                  <span className="badge-eyebrow badge-eyebrow-apple block text-[0.62rem] font-bold text-slate-400 tracking-wider">Download on the</span>
+                  <span className="badge-store-name block text-[0.92rem] font-bold text-white leading-tight">App Store</span>
                 </div>
               </a>
             </div>
           </div>
 
           {/* Center Column: Phone Mockup */}
-          <div className="app-col-mockup">
-            <div className="phone-mockup-wrapper">
+          <div className="app-col-mockup flex items-center justify-center relative">
+            <div className="phone-mockup-wrapper relative max-w-[320px] w-full mx-auto">
               <img
                 src={phoneImage}
                 alt="EVOLTEK Franchise Mobile App Dashboard — Station Status, Charger Availability, Total Usage, Earnings"
-                className="phone-mockup-img"
+                className="phone-mockup-img w-full h-auto drop-shadow-[0_25px_50px_rgba(0,0,0,0.25)]"
               />
             </div>
           </div>
 
           {/* Right Column: 6 Glowing Feature Pills */}
-          <div className="app-col-features">
-            <div className="features-pill-stack">
+          <div className="app-col-features flex flex-col justify-center">
+            <div className="features-pill-stack flex flex-col gap-3">
               {features.map((feat, idx) => (
                 <div
                   key={feat.id}
-                  className={`app-feature-pill ${activeFeature === idx ? 'pill-active' : ''}`}
+                  className={`app-feature-pill flex items-center gap-4 bg-white border border-slate-200/80 rounded-2xl p-3 px-4 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:border-emerald-500 hover:shadow-[0_8px_24px_rgba(16,185,129,0.15)] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer ${activeFeature === idx ? 'pill-active border-emerald-500 shadow-[0_8px_24px_rgba(16,185,129,0.18)] bg-emerald-50/30' : ''}`}
                   onMouseEnter={() => setActiveFeature(idx)}
                 >
                   {/* Left Circular Emerald Icon Badge */}
-                  <div className="pill-icon-bubble">
+                  <div className="pill-icon-bubble w-11 h-11 rounded-full bg-emerald-600 flex items-center justify-center text-white shrink-0 shadow-md">
                     {feat.icon}
                   </div>
 
                   {/* Text Content */}
-                  <div className="pill-text-content">
-                    <h3 className="pill-title">{feat.title}</h3>
-                    <p className="pill-desc">{feat.desc}</p>
+                  <div className="pill-text-content flex-grow text-left">
+                    <h3 className="pill-title text-[0.95rem] font-bold text-slate-900 mb-0.5">{feat.title}</h3>
+                    <p className="pill-desc text-[0.8rem] text-slate-500 font-normal leading-tight m-0">{feat.desc}</p>
                   </div>
 
                   {/* Right Arrow */}
-                  <div className="pill-arrow-wrap">
+                  <div className="pill-arrow-wrap text-slate-400 font-bold text-xl">
                     <span className="pill-arrow">›</span>
                   </div>
                 </div>
