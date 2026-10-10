@@ -42,7 +42,15 @@ try {
     { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/024f6433-49cd-4cbf-85b5-30d6a9d98e37/.user_uploaded/media_1790776057502.png', dest: 'ready-to-power-exact.png' },
     { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/024f6433-49cd-4cbf-85b5-30d6a9d98e37/suitable_charging_bg_1790776895877.jpg', dest: 'suitable-charging-bg.jpg' },
     { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/024f6433-49cd-4cbf-85b5-30d6a9d98e37/dusk_charging_bg_1790776931121.jpg', dest: 'dusk-charging-bg.jpg' },
-    { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/68378a9f-5dce-4b6a-bb55-821b6310ce1b/.user_uploaded/media_1791011636430.png', dest: 'booking-launch-composite.png' }
+    { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/68378a9f-5dce-4b6a-bb55-821b6310ce1b/.user_uploaded/media_1791011636430.png', dest: 'booking-launch-composite.png' },
+    { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/2bf45417-e241-455a-95d1-3206024630fd/.user_uploaded/media_1791522345652.png', dest: 'contact-page-reference.png' },
+    { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/2bf45417-e241-455a-95d1-3206024630fd/.user_uploaded/media_1791524252658.png', dest: 'contact-hero-banner.png' },
+    { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/2bf45417-e241-455a-95d1-3206024630fd/.user_uploaded/media_1791526628441.jpg', dest: 'about-page-reference.jpg' },
+    { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/2bf45417-e241-455a-95d1-3206024630fd/.user_uploaded/media_1791527313053.jpg', dest: 'about-hero-banner.jpg' },
+    { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/2bf45417-e241-455a-95d1-3206024630fd/.user_uploaded/media_1791527990978.png', dest: 'about-connecting-journey.png' },
+    { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/2bf45417-e241-455a-95d1-3206024630fd/.user_uploaded/media_1791531556143.jpg', dest: 'about-connecting-station.jpg' },
+    { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/9aafe21d-53c6-4699-b1e5-facebeede5f5/.user_uploaded/media_1791543065847.png', dest: 'about-powering-journey-bg.png' },
+    { src: 'C:/Users/HP/.gemini/antigravity-ide/brain/9aafe21d-53c6-4699-b1e5-facebeede5f5/.user_uploaded/media_1791543081170.png', dest: 'about-powering-journey-ref.png' }
   ];
 
   filesToSync.forEach(({ src, dest }) => {
@@ -347,11 +355,11 @@ try {
                     if (alpha < 0.04) continue;
 
                     const r = ((ldata[idx00] * (1 - fx) + ldata[idx01] * fx) * (1 - fy) +
-                               (ldata[idx10] * (1 - fx) + ldata[idx11] * fx) * fy);
+                      (ldata[idx10] * (1 - fx) + ldata[idx11] * fx) * fy);
                     const g = ((ldata[idx00 + 1] * (1 - fx) + ldata[idx01 + 1] * fx) * (1 - fy) +
-                               (ldata[idx10 + 1] * (1 - fx) + ldata[idx11 + 1] * fx) * fy);
+                      (ldata[idx10 + 1] * (1 - fx) + ldata[idx11 + 1] * fx) * fy);
                     const b = ((ldata[idx00 + 2] * (1 - fx) + ldata[idx01 + 2] * fx) * (1 - fy) +
-                               (ldata[idx10 + 2] * (1 - fx) + ldata[idx11 + 2] * fx) * fy);
+                      (ldata[idx10 + 2] * (1 - fx) + ldata[idx11 + 2] * fx) * fy);
 
                     const dIdx = (destRow * cw + destCol) * 4;
                     sub[dIdx] = Math.round(r * alpha + sub[dIdx] * (1 - alpha));
@@ -641,6 +649,54 @@ export default defineConfig({
             if (fs.existsSync(publicFile)) {
               res.setHeader('Content-Type', 'image/jpeg');
               fs.createReadStream(publicFile).pipe(res);
+              return;
+            }
+          }
+          if (req.url === '/contact-page-reference.png' || req.url?.startsWith('/contact-page-reference.png')) {
+            const uploadedFile = 'C:/Users/HP/.gemini/antigravity-ide/brain/2bf45417-e241-455a-95d1-3206024630fd/.user_uploaded/media_1791522345652.png';
+            if (fs.existsSync(uploadedFile)) {
+              res.setHeader('Content-Type', 'image/png');
+              fs.createReadStream(uploadedFile).pipe(res);
+              return;
+            }
+          }
+          if (req.url === '/contact-hero-banner.png' || req.url?.startsWith('/contact-hero-banner.png')) {
+            const uploadedFile = 'C:/Users/HP/.gemini/antigravity-ide/brain/2bf45417-e241-455a-95d1-3206024630fd/.user_uploaded/media_1791524252658.png';
+            if (fs.existsSync(uploadedFile)) {
+              res.setHeader('Content-Type', 'image/png');
+              fs.createReadStream(uploadedFile).pipe(res);
+              return;
+            }
+          }
+          if (req.url === '/about-page-reference.jpg' || req.url?.startsWith('/about-page-reference.jpg')) {
+            const uploadedFile = 'C:/Users/HP/.gemini/antigravity-ide/brain/2bf45417-e241-455a-95d1-3206024630fd/.user_uploaded/media_1791526628441.jpg';
+            if (fs.existsSync(uploadedFile)) {
+              res.setHeader('Content-Type', 'image/jpeg');
+              fs.createReadStream(uploadedFile).pipe(res);
+              return;
+            }
+          }
+          if (req.url === '/about-hero-banner.jpg' || req.url?.startsWith('/about-hero-banner.jpg')) {
+            const uploadedFile = 'C:/Users/HP/.gemini/antigravity-ide/brain/2bf45417-e241-455a-95d1-3206024630fd/.user_uploaded/media_1791527313053.jpg';
+            if (fs.existsSync(uploadedFile)) {
+              res.setHeader('Content-Type', 'image/jpeg');
+              fs.createReadStream(uploadedFile).pipe(res);
+              return;
+            }
+          }
+          if (req.url === '/about-connecting-journey.png' || req.url?.startsWith('/about-connecting-journey.png')) {
+            const uploadedFile = 'C:/Users/HP/.gemini/antigravity-ide/brain/2bf45417-e241-455a-95d1-3206024630fd/.user_uploaded/media_1791527990978.png';
+            if (fs.existsSync(uploadedFile)) {
+              res.setHeader('Content-Type', 'image/png');
+              fs.createReadStream(uploadedFile).pipe(res);
+              return;
+            }
+          }
+          if (req.url === '/about-connecting-station.jpg' || req.url?.startsWith('/about-connecting-station.jpg')) {
+            const uploadedFile = 'C:/Users/HP/.gemini/antigravity-ide/brain/2bf45417-e241-455a-95d1-3206024630fd/.user_uploaded/media_1791531556143.jpg';
+            if (fs.existsSync(uploadedFile)) {
+              res.setHeader('Content-Type', 'image/jpeg');
+              fs.createReadStream(uploadedFile).pipe(res);
               return;
             }
           }

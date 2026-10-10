@@ -110,6 +110,7 @@ export default function FranchiseOpportunitySection() {
 
   return (
     <section id="franchise" className="franchise-daylight-section relative py-20 bg-white overflow-hidden">
+      <div id="services" className="absolute -top-24" />
       <div className="container franchise-daylight-container max-w-[1280px] mx-auto px-6">
         {/* Top Split Header: Left Info + Right Canopy Charger Visual */}
         <div className="franchise-hero-split grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center mb-14">
